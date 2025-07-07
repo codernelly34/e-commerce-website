@@ -39,7 +39,10 @@ const Home = () => {
       <main id="mainSection" className="h-screen">
         <section id="quickShow" className="relative">
           <Categories />
-          <div className="p-2 pt-12 flex items-center justify-center gap-6 flex-wrap overflow-auto">
+          <div className="text-center pt-10">
+            <span className="text-3xl font-medium">Top best products</span>
+          </div>
+          <div className="pt-12 flex items-center justify-center gap-6 flex-wrap overflow-auto">
             {ProductsList.slice(0, 10).map((product, index) => (
               <Card
                 key={product.id}
@@ -49,6 +52,10 @@ const Home = () => {
                 price={product.price}
               />
             ))}
+            <div
+              id="card"
+              className="flex flex-col z-auto w-[20.5rem] md:w-[17.5rem] h-[25rem] rounded-lg shadow-[0px_0px_4px_#d4d4d4] "
+            ></div>
           </div>
         </section>
       </main>
