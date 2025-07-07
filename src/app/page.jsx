@@ -3,6 +3,7 @@ import HomeNav from "@/components/HomeNav.jsx";
 import Link from "next/link.js";
 import Categories from "@/components/Categories.jsx";
 import Card from "@/components/Card.jsx";
+import ProductsList from "@/utils/productsList.js";
 
 const Home = () => {
   return (
@@ -38,15 +39,16 @@ const Home = () => {
       <main id="mainSection" className="h-screen">
         <section id="quickShow" className="relative">
           <Categories />
-          <div className="p-2 pt-12 flex items-center justify-center gap-6 flex-wrap">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+          <div className="p-2 pt-12 flex items-center justify-center gap-6 flex-wrap overflow-auto">
+            {ProductsList.slice(0, 10).map((product, index) => (
+              <Card
+                key={product.id}
+                title={product.title}
+                imageUrl={product.imageUrl}
+                currency={product.currency}
+                price={product.price}
+              />
+            ))}
           </div>
         </section>
       </main>

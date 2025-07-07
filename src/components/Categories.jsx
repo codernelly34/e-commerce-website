@@ -58,7 +58,7 @@ const Categories = () => {
       <section className="flex items-center gap-4">
         <div
           id="icon"
-          className="transition-all duration-300 active:scale-90 flex items-center justify-center cursor-pointer shadow-[0px_0px_2px_#989797] py-2.5 px-4 rounded-[20px]"
+          className="transition-all duration-300 active:scale-90 flex items-center justify-center cursor-pointer shadow-[0px_0px_2px_#989797] py-1.5 px-2 md:py-2.5 md:px-4 rounded-[20px]"
           onClick={handleScroll}
         >
           <LayoutDashboard size={22} strokeWidth={2.3} />
@@ -84,7 +84,7 @@ const Categories = () => {
                 name="search-item"
                 id="search-item"
                 placeholder="Search..."
-                className="shadow-[0px_0px_1px_#333] rounded-[20px] px-2.5 py-1.5"
+                className="shadow-[0px_0px_1px_#333] rounded-[20px] py-1.5 px-2 md:px-2.5 md:py-1.5"
               />
               <label
                 htmlFor="search-item"
@@ -97,11 +97,11 @@ const Categories = () => {
           {categories.map((value, index) => (
             <li
               key={index}
-              className="shadow-[0px_0px_1px_#333] transition-all duration-300 ease-linear text-sm md:text-base font-semibold rounded-[20px] hover:scale-105"
+              className="shadow-[0px_0px_1px_#333] transition-all duration-300 ease-linear text-sm md:text-base font-semibold rounded-[20px] hover:scale-105 "
             >
               <Link
                 href={`/${value.replace(" ", "_")}`}
-                className="inline-block px-2.5 pt-2 capitalize"
+                className="inline-block px-1.5 md:px-2.5 pt-2 capitalize"
               >
                 {value}
               </Link>
