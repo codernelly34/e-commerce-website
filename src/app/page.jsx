@@ -2,8 +2,7 @@ import "@/styles/home.css";
 import HomeNav from "@/components/HomeNav.jsx";
 import Link from "next/link.js";
 import Categories from "@/components/Categories.jsx";
-import Card from "@/components/Card.jsx";
-import ProductsList from "@/utils/productsList.js";
+import Products from "@/components/Products.jsx";
 
 const Home = () => {
   return (
@@ -42,21 +41,7 @@ const Home = () => {
           <div className="text-center pt-10">
             <span className="text-3xl font-medium">Top best products</span>
           </div>
-          <div className="pt-12 flex items-center justify-center gap-6 flex-wrap overflow-auto">
-            {ProductsList.slice(0, 10).map((product, index) => (
-              <Card
-                key={product.id}
-                title={product.title}
-                imageUrl={product.imageUrl}
-                currency={product.currency}
-                price={product.price}
-              />
-            ))}
-            <div
-              id="card"
-              className="flex flex-col z-auto w-[20.5rem] md:w-[17.5rem] h-[25rem] rounded-lg shadow-[0px_0px_4px_#d4d4d4] "
-            ></div>
-          </div>
+          <Products />
         </section>
       </main>
     </div>

@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+#ProductDetails {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0.4));
+}

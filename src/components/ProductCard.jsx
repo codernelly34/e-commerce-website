@@ -1,10 +1,10 @@
 import Image from "next/image.js";
 import { ShoppingCart } from "lucide-react";
 
-const Card = ({ title, imageUrl, currency, price }) => {
+const Card = ({ title, imageUrl, currency, price, onClick, id }) => {
   return (
     <div
-      id="card"
+      id="ProductCard"
       className="flex flex-col z-auto w-[20.5rem] lg:w-[17.5rem] h-[25rem] rounded-lg shadow-[0px_0px_4px_#d4d4d4] "
     >
       <div
@@ -33,6 +33,7 @@ const Card = ({ title, imageUrl, currency, price }) => {
           type="button"
           className="inline-block border border-gray-400 rounded font-medium w-full py-1 cursor-pointer transition-[scale] duration-300 ease-linear hover:scale-95"
           title="click this button to see more info about this product"
+          onClick={() => onClick(id)}
         >
           Details
         </button>
