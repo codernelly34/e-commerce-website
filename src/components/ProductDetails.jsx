@@ -1,8 +1,13 @@
 import ProductsList from "@/utils/productsList.js";
 import { X, ShoppingCart } from "lucide-react";
 import Image from "next/image.js";
+import { useRouter } from "next/navigation";
 
 export const ProductDetails = ({ setShowDetails, productID }) => {
+  const router = useRouter();
+  const Link = () => {
+    router.push(`/shop?product=${productID}`);
+  };
   const product = ProductsList.filter((product) => product.id === productID);
 
   return (
@@ -49,7 +54,10 @@ export const ProductDetails = ({ setShowDetails, productID }) => {
               <li>texting to</li>
             </ul>
           </div>
-          <button className="flex items-center justify-center gap-4 border border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white rounded font-semibold transition-[background-color_color] duration-300 ease-linear w-full py-1.5 cursor-pointer mt-4">
+          <button
+            onClick={Link}
+            className="flex items-center justify-center gap-4 border border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white rounded font-semibold transition-[background-color_color] duration-300 ease-linear w-full py-1.5 cursor-pointer mt-4"
+          >
             Buy now
             <ShoppingCart size={18} />
           </button>

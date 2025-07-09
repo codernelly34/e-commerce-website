@@ -1,7 +1,14 @@
 import Image from "next/image.js";
 import { ShoppingCart } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const Card = ({ title, imageUrl, currency, price, onClick, id }) => {
+  const router = useRouter();
+
+  const Link = () => {
+    router.push(`/shop?product=${id}`);
+  };
+
   return (
     <div
       id="ProductCard"
@@ -37,7 +44,10 @@ const Card = ({ title, imageUrl, currency, price, onClick, id }) => {
         >
           Details
         </button>
-        <button className="flex items-center justify-center gap-1.5 border border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white rounded font-semibold transition-[background-color_color] duration-300 ease-linear w-full py-1 px-1 cursor-pointer">
+        <button
+          onClick={Link}
+          className="flex items-center justify-center gap-1.5 border border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white rounded font-semibold transition-[background-color_color] duration-300 ease-linear w-full py-1 px-1 cursor-pointer"
+        >
           Buy now
           <ShoppingCart size={18} />
         </button>
