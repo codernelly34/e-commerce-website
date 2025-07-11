@@ -72,7 +72,7 @@ const Categories = () => {
         </div>
         <ul
           ref={navRef}
-          className="w-full overflow-auto whitespace-nowrap flex gap-4 p-2"
+          className="w-full overflow-auto scrollbar-thin whitespace-nowrap flex gap-4 p-2"
         >
           <li
             id="search"

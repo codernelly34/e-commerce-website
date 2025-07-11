@@ -17,7 +17,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className="scrollbar-thin scrollbar-thumb-sky-500 hover:scrollbar-thumb-sky-400 active:scrollbar-thumb-sky-300 scrollbar-track-slate-100 self-dark:scrollbar-track-slate-900"
+    >
       <head>
         <meta name="theme-color" content="#601c1c" />
       </head>
