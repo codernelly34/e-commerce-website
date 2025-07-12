@@ -2,9 +2,11 @@
 
 import ProductsList from "@/utils/productsList.js";
 import Image from "next/image.js";
+import Link from "next/link.js";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import { ChevronDown, Plus } from "lucide-react";
+import { useEffect, useState, useMemo } from "react";
+import { ChevronDown, Plus, ShoppingCart } from "lucide-react";
+import roboto from "@/utils/fonts.js";
 
 const Shop = () => {
   const searchParams = useSearchParams();
@@ -85,38 +87,54 @@ const Shop = () => {
     }
   };
 
-  const calculateTotalPrice = () => {
+  const calculateTotalPrice = useMemo(() => {
     return productsToShop.reduce((total, product) => {
       const quantity = quantities[product.id] || 0;
       return total + product.price * quantity;
     }, 0);
-  };
+  }, [productsToShop, quantities]);
 
-  const calculateTotalQuantity = () => {
+  const calculateTotalQuantity = useMemo(() => {
     return productsToShop.reduce((total, product) => {
       const quantity = quantities[product.id] || 0;
       return total + quantity;
     }, 0);
-  };
+  }, [productsToShop, quantities]);
 
   return (
-    <div className="flex flex-col md:flex-row gap-16 md:gap-2 p-2">
-      <div className="p-0 w-full md:w-1/2">
-        <div className="overflow-auto scrollbar-thin w-full shadow-md p-1 h-[90vh] rounded bg-gray-200 relative">
+    <>
+      <div className="flex flex-col md:flex-row gap-16 md:gap-2 p-1">
+        <section
+          id="shopping-list"
+          className="overflow-auto scrollbar-thin w-full md:w-1/2 shadow-md p-1 h-[95vh] rounded bg-gray-200 relative"
+        >
           {productsToShop.length > 0 ? (
             <>
-              <article className="shadow-[0px_0px_4px_#d4d4d4] p-1 rounded bg-white mb-8 sticky z-50 top-0">
-                <span className="flex items-center gap-8 pl-8 py-2 text-xl">
+              <article
+                className={`${roboto.className} font-light text-xl shadow p-1 rounded bg-white mb-8 sticky z-50 top-0`}
+              >
+                <h3 className=" opacity-85 text-center text-2xl font-bold py-2 [word-spacing:8px] mb-2 shadow">
+                  Shopping List{" "}
+                  <ShoppingCart
+                    size={28}
+                    strokeWidth={2.5}
+                    className="inline-block"
+                  />
+                </h3>
+                <span className="flex items-center gap-8 pl-8 py-2">
                   <p>Total products:</p>
-                  <b>{productsToShop.length}</b>
+                  <b className="font-semibold">{productsToShop.length}</b>
                 </span>
-                <span className="flex items-center gap-9.5 pl-8 py-1 text-xl">
+                <span className="flex items-center gap-9.5 pl-8 py-1">
                   <p>Total quantity:</p>
-                  <b>{calculateTotalQuantity()}</b>
+                  <b className="font-semibold">{calculateTotalQuantity}</b>
                 </span>
-                <span className="flex items-center gap-14.5 pl-8 py-2 text-xl">
+                <span className="flex items-center gap-14.5 pl-8 py-2">
                   <p>Total prices:</p>
-                  <b>{calculateTotalPrice().toFixed(2)}</b>
+                  <b className="font-semibold">
+                    XAF {calculateTotalPrice.toFixed(2)}
+                    <span className=" inline-block font-light pl-0.5">frs</span>
+                  </b>
                 </span>
                 <span className="block text-end pr-8 mt-2 pb-1">
                   <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold w-50 py-2 rounded shadow transition duration-300 cursor-pointer">
@@ -127,7 +145,7 @@ const Shop = () => {
               {productsToShop.map((product) => (
                 <article
                   key={product.id}
-                  className="shadow-[0px_0px_4px_#d4d4d4] p-1 rounded bg-white mb-8"
+                  className="shadow p-1 rounded bg-white mb-8"
                 >
                   <span className="flex flex-row gap-2">
                     <Image
@@ -138,14 +156,14 @@ const Shop = () => {
                       style={{
                         objectFit: "contain",
                         width: "150px",
-                        height: "100px",
+                        height: "100%",
                       }}
                       className="border border-gray-700 rounded"
                     />
                     <div className="content-center">
                       <h2
                         onClick={() => toggleItem(product.id)}
-                        className="text-lg font-semibold underline cursor-pointer"
+                        className="text-lg font-medium underline cursor-pointer"
                       >
                         {product.title}{" "}
                         <ChevronDown
@@ -156,7 +174,10 @@ const Shop = () => {
                           } transition-all duration-300 ease-linear`}
                         />
                       </h2>
-                      <div className="flex items-center gap-4 mt-2">
+                      <p className="py-2 font-semibold">
+                        Price XAF {product.price}frs
+                      </p>
+                      <div className="flex items-center gap-4">
                         <p>Quantity ➡️</p>
                         <button
                           onClick={() => decreaseQuantity(product.id)}
@@ -196,78 +217,106 @@ const Shop = () => {
                   </div>
                 </article>
               ))}
+              <Link
+                href="#shopping-list"
+                className=" inline-block px-3 py-1 bg-gray-100 rounded mt-2 content-center text-center cursor-pointer"
+              >
+                Add more product to shopping list
+              </Link>
             </>
           ) : (
-            <div className="flex justify-center items-center h-full">
-              <p>Lorem ipsum dolor sit amet.</p>
+            <div className="flex flex-col justify-center items-center h-full">
+              <p>You have not Add any product to shopping list yet</p>
+              <Link
+                href="#quickShoppingProducts"
+                className=" inline-block px-3 py-1 bg-gray-100 rounded mt-2 content-center text-center cursor-pointer"
+              >
+                Add product to shopping list
+              </Link>
             </div>
           )}
-        </div>
-      </div>
+        </section>
 
-      <div className="overflow-auto scrollbar-thin h-[90vh] w-full md:w-1/2 p-2 bg-gray-200 rounded">
-        {ProductsList.map((product) => (
-          <article
-            key={product.id}
-            className="shadow-[0px_0px_4px_#d4d4d4] rounded p-2 mb-8 bg-white"
+        <section
+          id="quickShoppingProducts"
+          className="overflow-auto scrollbar-thin h-[95vh] w-full md:w-1/2 p-1 bg-gray-200 rounded shadow-lg relative"
+        >
+          <h3
+            className={`${roboto.className} bg-white rounded-xs text-center text-2xl font-bold py-2 [word-spacing:8px] mb-2 shadow sticky top-0`}
           >
-            <span className="flex flex-row gap-2">
-              <Image
-                src={product.imageUrl}
-                alt={product.title}
-                width={800}
-                height={600}
-                style={{
-                  objectFit: "contain",
-                  width: "150px",
-                  height: "100px",
-                }}
-                className="border border-gray-700 rounded"
-              />
-              <div className="content-center">
-                <h2
-                  onClick={() => toggleItem(product.id)}
-                  className="text-lg font-semibold underline cursor-pointer"
-                >
-                  {product.title}{" "}
-                  <ChevronDown
-                    size={30}
-                    strokeWidth={2.5}
-                    className={`inline-block ${
-                      openItems[product.id] ? "rotate-180" : "rotate-0"
-                    } transition-all duration-300 ease-linear`}
-                  />
-                </h2>
-                <button
-                  onClick={() => addProductToShoppingList(product.id)}
-                  className="px-3 py-1 bg-gray-100 rounded mt-2 content-center text-center cursor-pointer"
-                >
-                  Add to shopping List{" "}
-                  <Plus
-                    size={20}
-                    strokeWidth={2.5}
-                    className={`inline-block border rounded-full border-gray-700 -mt-0.5 ml-1`}
-                  />
-                </button>
-              </div>
-            </span>
-            <div
-              id="details"
-              className={`${
-                openItems[product.id] ? "h-[10rem]" : "h-0"
-              } overflow-hidden transition-all duration-300 ease-linear`}
+            Shop more Products{" "}
+            <ShoppingCart
+              size={28}
+              strokeWidth={2.5}
+              className="inline-block"
+            />
+          </h3>
+          {ProductsList.map((product) => (
+            <article
+              key={product.id}
+              className="shadow rounded p-2 mb-8 bg-white"
             >
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque
-                ut, quos perspiciatis sapiente minima optio dolor facilis est
-                vel atque, deleniti obcaecati eligendi deserunt sunt iste,
-                blanditiis quaerat dicta illum?
-              </p>
-            </div>
-          </article>
-        ))}
+              <span className="flex flex-row gap-2">
+                <Image
+                  src={product.imageUrl}
+                  alt={product.title}
+                  width={800}
+                  height={600}
+                  style={{
+                    objectFit: "contain",
+                    width: "150px",
+                    height: "100%",
+                  }}
+                  className="border border-gray-700 rounded"
+                />
+                <div className="content-center">
+                  <h2
+                    onClick={() => toggleItem(product.id)}
+                    className="text-lg font-medium underline cursor-pointer"
+                  >
+                    {product.title}{" "}
+                    <ChevronDown
+                      size={30}
+                      strokeWidth={2.5}
+                      className={`inline-block ${
+                        openItems[product.id] ? "rotate-180" : "rotate-0"
+                      } transition-all duration-300 ease-linear`}
+                    />
+                  </h2>
+                  <p className="py-2 font-semibold">
+                    Price XAF {product.price}frs
+                  </p>
+                  <button
+                    onClick={() => addProductToShoppingList(product.id)}
+                    className="px-3 py-1 bg-gray-100 rounded mt-2 content-center text-center cursor-pointer"
+                  >
+                    Add to shopping List{" "}
+                    <Plus
+                      size={20}
+                      strokeWidth={2.5}
+                      className={`inline-block border rounded-full border-gray-700 -mt-0.5 ml-1`}
+                    />
+                  </button>
+                </div>
+              </span>
+              <div
+                id="details"
+                className={`${
+                  openItems[product.id] ? "h-[10rem]" : "h-0"
+                } overflow-hidden transition-all duration-300 ease-linear`}
+              >
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Eaque ut, quos perspiciatis sapiente minima optio dolor
+                  facilis est vel atque, deleniti obcaecati eligendi deserunt
+                  sunt iste, blanditiis quaerat dicta illum?
+                </p>
+              </div>
+            </article>
+          ))}
+        </section>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,3 +1,4 @@
+import BackToTop from "@/components/BackToTopButton.jsx";
 import "@/styles/globals.css";
 import { Montserrat } from "next/font/google";
 
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         className={`${montserrat.className} antialiased text-base lg:text-lg`}
       >
         {children}
+        <BackToTop />
       </body>
     </html>
   );
