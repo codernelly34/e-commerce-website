@@ -4,14 +4,23 @@ import ProductsList from "@/utils/productsList.js";
 import Image from "next/image.js";
 import Link from "next/link.js";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { ChevronDown, Plus, ShoppingCart } from "lucide-react";
 import roboto from "@/utils/fonts.js";
+import { useShopping } from "@/context/ShoppingContext";
 
 const Shop = () => {
+  const {
+    productsToShop,
+    quantities,
+    addProduct,
+    increaseQuantity,
+    decreaseQuantity,
+    totalQuantity,
+    totalPrice,
+    setShowSummary,
+  } = useShopping();
   const searchParams = useSearchParams();
-  const [productsToShop, setProductsToShop] = useState([]);
-  const [quantities, setQuantities] = useState({});
   const [openItems, setOpenItems] = useState({});
 
   const productParam = searchParams.get("product");
@@ -24,22 +33,7 @@ const Shop = () => {
     );
 
     if (getProduct) {
-      setProductsToShop((prev) => {
-        // Avoid duplicates
-        if (prev.some((product) => product.id === getProduct.id)) {
-          return prev;
-        }
-        return [...prev, getProduct];
-      });
-
-      // Set default quantity to 1 if not already set
-      setQuantities((prev) => {
-        if (prev[getProduct.id] !== undefined) return prev;
-        return {
-          ...prev,
-          [getProduct.id]: 1,
-        };
-      });
+      addProduct(getProduct);
     }
   }, [productParam]);
 
@@ -50,60 +44,9 @@ const Shop = () => {
     }));
   };
 
-  const increaseQuantity = (id) => {
-    setQuantities((prev) => ({
-      ...prev,
-      [id]: (prev[id] || 1) + 1,
-    }));
-  };
-
-  const decreaseQuantity = (id) => {
-    setQuantities((prev) => ({
-      ...prev,
-      [id]: Math.max((prev[id] || 1) - 1, 1), // Prevent negative quantity
-    }));
-  };
-
-  const addProductToShoppingList = (productId) => {
-    const getProduct = ProductsList.find((product) => product.id === productId);
-
-    if (getProduct) {
-      setProductsToShop((prev) => {
-        // Avoid duplicates
-        if (prev.some((product) => product.id === getProduct.id)) {
-          return prev;
-        }
-        return [...prev, getProduct];
-      });
-
-      // Set default quantity to 1 if not already set
-      setQuantities((prev) => {
-        if (prev[getProduct.id] !== undefined) return prev;
-        return {
-          ...prev,
-          [getProduct.id]: 1,
-        };
-      });
-    }
-  };
-
-  const calculateTotalPrice = useMemo(() => {
-    return productsToShop.reduce((total, product) => {
-      const quantity = quantities[product.id] || 0;
-      return total + product.price * quantity;
-    }, 0);
-  }, [productsToShop, quantities]);
-
-  const calculateTotalQuantity = useMemo(() => {
-    return productsToShop.reduce((total, product) => {
-      const quantity = quantities[product.id] || 0;
-      return total + quantity;
-    }, 0);
-  }, [productsToShop, quantities]);
-
   return (
-    <>
-      <div className="flex flex-col md:flex-row gap-16 md:gap-2 p-1">
+    <main>
+      <div className="flex flex-col mt-8 md:flex-row gap-16 md:gap-2 p-1">
         <section
           id="shopping-list"
           className="overflow-auto scrollbar-thin w-full md:w-1/2 shadow-md p-1 h-[95vh] rounded bg-gray-200 relative"
@@ -111,15 +54,10 @@ const Shop = () => {
           {productsToShop.length > 0 ? (
             <>
               <article
-                className={`${roboto.className} font-light text-xl shadow p-1 rounded bg-white mb-8 sticky z-50 top-0`}
+                className={`${roboto.className} font-light text-xl shadow p-1 rounded bg-white mb-8 sticky z-auto top-0`}
               >
-                <h3 className=" opacity-85 text-center text-2xl font-bold py-2 [word-spacing:8px] mb-2 shadow">
-                  Shopping List{" "}
-                  <ShoppingCart
-                    size={28}
-                    strokeWidth={2.5}
-                    className="inline-block"
-                  />
+                <h3 className="text-gray-800 text-center text-2xl font-bold py-2 [word-spacing:8px] mb-2 shadow">
+                  Shopping List <ShopIcon />
                 </h3>
                 <span className="flex items-center gap-8 pl-8 py-2">
                   <p>Total products:</p>
@@ -127,17 +65,20 @@ const Shop = () => {
                 </span>
                 <span className="flex items-center gap-9.5 pl-8 py-1">
                   <p>Total quantity:</p>
-                  <b className="font-semibold">{calculateTotalQuantity}</b>
+                  <b className="font-semibold">{totalQuantity}</b>
                 </span>
                 <span className="flex items-center gap-14.5 pl-8 py-2">
                   <p>Total prices:</p>
                   <b className="font-semibold">
-                    XAF {calculateTotalPrice.toFixed(2)}
+                    XAF {totalPrice.toFixed(2)}
                     <span className=" inline-block font-light pl-0.5">frs</span>
                   </b>
                 </span>
                 <span className="block text-end pr-8 mt-2 pb-1">
-                  <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold w-50 py-2 rounded shadow transition duration-300 cursor-pointer">
+                  <button
+                    onClick={() => setShowSummary(true)}
+                    className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold w-50 py-2 rounded shadow transition duration-300 cursor-pointer"
+                  >
                     Confirm & Pay
                   </button>
                 </span>
@@ -242,14 +183,9 @@ const Shop = () => {
           className="overflow-auto scrollbar-thin h-[95vh] w-full md:w-1/2 p-1 bg-gray-200 rounded shadow-lg relative"
         >
           <h3
-            className={`${roboto.className} bg-white rounded-xs text-center text-2xl font-bold py-2 [word-spacing:8px] mb-2 shadow sticky top-0`}
+            className={`${roboto.className} bg-white text-gray-800 rounded-xs text-center text-2xl font-bold py-2 mb-2 shadow sticky top-0`}
           >
-            Shop more Products{" "}
-            <ShoppingCart
-              size={28}
-              strokeWidth={2.5}
-              className="inline-block"
-            />
+            Shop more Products <ShopIcon />
           </h3>
           {ProductsList.map((product) => (
             <article
@@ -287,8 +223,8 @@ const Shop = () => {
                     Price XAF {product.price}frs
                   </p>
                   <button
-                    onClick={() => addProductToShoppingList(product.id)}
-                    className="px-3 py-1 bg-gray-100 rounded mt-2 content-center text-center cursor-pointer"
+                    onClick={() => addProduct(product)}
+                    className="px-2 py-1 bg-gray-100 rounded mt-2 content-center cursor-pointer whitespace-nowrap"
                   >
                     Add to shopping List{" "}
                     <Plus
@@ -316,8 +252,12 @@ const Shop = () => {
           ))}
         </section>
       </div>
-    </>
+    </main>
   );
 };
 
 export default Shop;
+
+function ShopIcon() {
+  return <ShoppingCart size={30} strokeWidth={2.5} className="inline-block" />;
+}
