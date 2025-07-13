@@ -5,6 +5,7 @@ import Link from "next/link.js";
 import { LayoutDashboard, ArrowRightFromLine, Search } from "lucide-react";
 
 const categories = [
+  "products",
   "solar panels",
   "batteries",
   "charge controller",
@@ -51,59 +52,68 @@ const Categories = () => {
   };
 
   return (
-    <nav id="nav" className="bg-white sticky top-0 w-full z-50">
-      <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4 text-center">
-        Shop by Product Type:
+    <nav
+      id="nav"
+      className="bg-white sticky top-0 py-3 shadow-lg px-3 w-full z-50 mb-6 border-b border-gray-200"
+    >
+      <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4 text-center tracking-tight">
+        Browse by Product Type
       </h2>
+
       <section className="flex items-center gap-4">
+        {/* Scroll control button */}
         <div
           id="icon"
-          className="transition-all duration-300 active:scale-90 flex items-center justify-center cursor-pointer shadow-[0px_0px_2px_#989797] py-1.5 px-2 md:py-2.5 md:px-4 rounded-[20px]"
+          className="transition-all duration-300 active:scale-90 flex items-center justify-center cursor-pointer shadow border border-gray-300 py-2 px-3 rounded-full hover:bg-gray-100"
           onClick={handleScroll}
         >
-          <LayoutDashboard size={22} strokeWidth={2.3} />
+          <LayoutDashboard size={22} strokeWidth={2.2} />
           <ArrowRightFromLine
             size={22}
-            strokeWidth={2.3}
-            className={`${
-              !scrollForward && "rotate-180"
-            } transition-all duration-300`}
+            strokeWidth={2.2}
+            className={`ml-1 ${
+              !scrollForward ? "rotate-180" : ""
+            } transition-transform duration-300`}
           />
         </div>
+
+        {/* Search input */}
         <ul
           ref={navRef}
-          className="w-full overflow-auto scrollbar-thin whitespace-nowrap flex gap-4 p-2"
+          className="w-full overflow-x-auto whitespace-nowrap flex gap-3 p-1 scrollbar-thin"
         >
           <li
             id="search"
-            className="p-0 shadow-none transition-all duration-300 ease-linear hover:scale-105"
+            className="transition-all duration-300 hover:scale-105"
           >
             <span className="flex items-center relative">
               <input
                 type="text"
                 name="search-item"
                 id="search-item"
-                placeholder="Search..."
-                className="shadow-[0px_0px_1px_#333] rounded-[20px] py-1.5 px-2 md:px-2.5 md:py-1.5"
+                placeholder="Search products..."
+                className="shadow border border-gray-300 rounded-full py-1.5 px-3 text-sm focus:outline-none focus:ring-2 focus:ring-gray-300"
               />
               <label
                 htmlFor="search-item"
-                className="absolute right-1.5 p-0 m-0"
+                className="absolute right-2 cursor-pointer"
               >
-                <Search color="#333" />
+                <Search size={18} color="#333" />
               </label>
             </span>
           </li>
+
+          {/* Category nav links */}
           {categories.map((value, index) => (
             <li
               key={index}
-              className="shadow-[0px_0px_1px_#333] transition-all duration-300 ease-linear text-sm md:text-base font-semibold rounded-[20px] hover:scale-105 "
+              className="transition-all duration-300 text-sm md:text-base font-semibold rounded-full hover:scale-105 shadow border border-gray-300 bg-white"
             >
               <Link
                 href={`/${value.replace(" ", "_")}`}
-                className="inline-block px-1.5 md:px-2.5 pt-2 capitalize"
+                className="inline-block px-3 py-1 capitalize text-gray-800 hover:text-gray-900"
               >
-                {value}
+                {value === "products" ? "All" : value}
               </Link>
             </li>
           ))}
