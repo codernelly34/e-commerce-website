@@ -45,8 +45,8 @@ const Shop = () => {
   };
 
   return (
-    <main>
-      <div className="flex flex-col mt-8 md:flex-row gap-16 md:gap-2 p-1">
+    <div id="shopping card">
+      <main className="flex flex-col mt-8 md:flex-row gap-16 md:gap-2 p-1">
         <section
           id="shopping-list"
           className="overflow-auto scrollbar-thin w-full md:w-1/2 shadow-md p-1 h-[95vh] rounded bg-gray-200 relative"
@@ -251,8 +251,8 @@ const Shop = () => {
             </article>
           ))}
         </section>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 };
 

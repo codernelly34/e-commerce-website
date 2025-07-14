@@ -6,7 +6,7 @@ import Products from "@/components/Products.jsx";
 
 const Home = () => {
   return (
-    <div>
+    <div id="home-page">
       <header id="heroSection" className="relative">
         <HomeNav />
         <div className="heroContent text-white pr-2">

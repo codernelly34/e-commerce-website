@@ -26,6 +26,7 @@ export default function RootLayout({ children }) {
         <meta name="theme-color" content="#601c1c" />
       </head>
       <body
+        id="app"
         className={`${montserrat.className} antialiased text-base lg:text-lg`}
       >
         {children}
