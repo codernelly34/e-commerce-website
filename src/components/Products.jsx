@@ -24,7 +24,7 @@ const Products = () => {
 
   return (
     <>
-      <div className="pt-12 flex items-center justify-center gap-6 flex-wrap overflow-auto">
+      <div className="py-12 flex items-center justify-center gap-6 flex-wrap overflow-auto">
         {ProductsList.slice(0, 7).map((product, index) => (
           <ProductCard
             key={product.id}

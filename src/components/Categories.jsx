@@ -54,7 +54,7 @@ const Categories = () => {
   return (
     <nav
       id="nav"
-      className="bg-white sticky top-0 py-3 shadow-lg px-3 w-full z-50 mb-6 border-b border-gray-200"
+      className="bg-white sticky top-0 p-3 shadow w-full z-50 mb-6 border-b border-gray-200"
     >
       <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4 text-center tracking-tight">
         Browse by Product Type

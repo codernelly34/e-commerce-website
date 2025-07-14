@@ -1,13 +1,14 @@
 "use client";
 
+import "@/styles/home.css";
 import { motion } from "framer-motion";
 import Link from "next/link.js";
 
 const Text = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       className="heroContent text-white pr-2"
     >
