@@ -7,11 +7,4 @@ export default function Page() {
       <Shop />
     </Suspense>
   );
-}          ))}
-        </section>
-      </main>
-    </div>
-  );
-};
-
-export default Shop;
+}
