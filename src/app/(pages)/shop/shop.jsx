@@ -29,7 +29,7 @@ const Shop = () => {
     if (!productParam) return;
 
     const getProduct = ProductsList.find(
-      (product) => product.id === productParam
+      (product) => product.id === productParam,
     );
 
     if (getProduct) {
@@ -102,22 +102,11 @@ const Shop = () => {
                       className="border border-gray-700 rounded"
                     />
                     <div className="content-center">
-                      <h2
-                        onClick={() => toggleItem(product.id)}
-                        className="text-lg font-medium underline cursor-pointer"
-                      >
-                        {product.title}{" "}
-                        <ChevronDown
-                          size={30}
-                          strokeWidth={2.5}
-                          className={`inline-block ${
-                            openItems[product.id] ? "rotate-180" : "rotate-0"
-                          } transition-all duration-300 ease-linear`}
-                        />
-                      </h2>
-                      <p className="py-2 font-semibold">
-                        Price XAF {product.price}frs
-                      </p>
+                      <Ppp
+                        product={product}
+                        openItems={openItems}
+                        toggleItem={toggleItem}
+                      />
                       <div className="flex items-center gap-4">
                         <p>Quantity ➡️</p>
                         <button
@@ -206,27 +195,16 @@ const Shop = () => {
                   className="border border-gray-700 rounded"
                 />
                 <div className="content-center">
-                  <h2
-                    onClick={() => toggleItem(product.id)}
-                    className="text-lg font-medium underline cursor-pointer"
-                  >
-                    {product.title}{" "}
-                    <ChevronDown
-                      size={30}
-                      strokeWidth={2.5}
-                      className={`inline-block ${
-                        openItems[product.id] ? "rotate-180" : "rotate-0"
-                      } transition-all duration-300 ease-linear`}
-                    />
-                  </h2>
-                  <p className="py-2 font-semibold">
-                    Price XAF {product.price}frs
-                  </p>
+                  <Ppp
+                    product={product}
+                    openItems={openItems}
+                    toggleItem={toggleItem}
+                  />
                   <button
                     onClick={() => addProduct(product)}
                     className="px-2 py-1 bg-gray-100 rounded mt-2 content-center cursor-pointer whitespace-nowrap"
                   >
-                    Add to shopping List{" "}
+                    Add to List{" "}
                     <Plus
                       size={20}
                       strokeWidth={2.5}
@@ -260,4 +238,25 @@ export default Shop;
 
 function ShopIcon() {
   return <ShoppingCart size={30} strokeWidth={2.5} className="inline-block" />;
-                }
+}
+
+function Ppp({ product, openItems, toggleItem }) {
+  return (
+    <span>
+      <h2
+        onClick={() => toggleItem(product.id)}
+        className="underline cursor-pointer"
+      >
+        {product.title}{" "}
+        <ChevronDown
+          size={30}
+          strokeWidth={2.5}
+          className={`inline-block ${
+            openItems[product.id] ? "rotate-180" : "rotate-0"
+          } transition-all duration-300 ease-linear`}
+        />
+      </h2>
+      <p className="py-2 font-semibold">Price XAF {product.price}frs</p>
+    </span>
+  );
+}

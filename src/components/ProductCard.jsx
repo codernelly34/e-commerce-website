@@ -12,12 +12,12 @@ const Card = ({ title, imageUrl, currency, price, onClick, id }) => {
   return (
     <div
       id="ProductCard"
-      className="flex flex-col z-auto w-[20.5rem] lg:w-[17.5rem] h-[25rem] rounded-lg shadow-[0px_0px_4px_#d4d4d4] "
+      className="flex py-1.5 w-full md:w-2/5 z-auto shadow-[0px_0px_4px_#918f8f] "
     >
       <div
         style={{
-          width: "300px",
-          height: "200px",
+          width: "220px",
+          height: "190px",
           position: "relative",
           margin: "auto",
         }}
@@ -29,16 +29,15 @@ const Card = ({ title, imageUrl, currency, price, onClick, id }) => {
           style={{ objectFit: "contain" }}
         />
       </div>
-      <span className="block text-center p-1.5">
-        <p className="font-medium pt-2">{title}</p>
-        <h2 className="font-bold text-[#333] text-xl md:text-2xl mt-4 mb-4">
+      <span className="block px-1.5">
+        <p className="py-1 w-[8rem] md:w-[14rem]">{title}</p>
+        <h2 className="pb-4 font-bold text-[#333] text-lg md:text-xl mt-2">
           {currency} {price}frs
         </h2>
-      </span>
-      <div className="flex items-center gap-2 p-2 mt-auto">
+
         <button
           type="button"
-          className="inline-block border border-gray-400 rounded font-medium w-full py-1 cursor-pointer transition-[scale] duration-300 ease-linear hover:scale-95"
+          className="inline-block border border-gray-400 rounded font-medium w-full py-1 cursor-pointer transition-[scale] duration-300 ease-linear hover:scale-95 mb-1.5"
           title="click this button to see more info about this product"
           onClick={() => onClick(id)}
         >
@@ -51,7 +50,7 @@ const Card = ({ title, imageUrl, currency, price, onClick, id }) => {
           Buy now
           <ShoppingCart size={18} />
         </button>
-      </div>
+      </span>
     </div>
   );
 };

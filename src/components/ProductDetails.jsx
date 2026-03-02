@@ -13,17 +13,18 @@ export const ProductDetails = ({ setShowDetails, productID }) => {
   return (
     <div
       id="ProductDetails"
-      className="h-screen w-full left-0 overflow-hidden fixed top-0 z-50 flex justify-center items-center"
+      className="h-screen w-full left-0 md:justify-center overflow-hidden fixed top-0 z-50 flex  items-center"
     >
       <div
         id="ProductCard"
-        className="flex flex-col z-auto w-[21rem] rounded-lg shadow-[0px_0px_1px_#d4d4d4] bg-white"
+        className="flex flex-col z-auto m-2 rounded-lg shadow-[0px_0px_1px_#d4d4d4] bg-white"
       >
         <span
-          className="cursor-pointer p-1 border-b border-black"
+          className="cursor-pointer p-1 border-b border-black text-red-500"
           onClick={() => setShowDetails(false)}
         >
           <X size={25} strokeWidth={2.3} className="float-end" />
+          <b className="float-end">Close</b>
         </span>
         <h2 className="text-center font-semibold my-3">{product[0].title}</h2>
         <div
@@ -56,7 +57,7 @@ export const ProductDetails = ({ setShowDetails, productID }) => {
           </div>
           <button
             onClick={Link}
-            className="flex items-center justify-center gap-4 border border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white rounded font-semibold transition-[background-color_color] duration-300 ease-linear w-full py-1.5 cursor-pointer mt-4"
+            className="w-1/2 md:w-2/5 flex items-center justify-center gap-3 border border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white rounded font-semibold transition-[background-color_color] duration-300 ease-linear py-1.5 cursor-pointer mx-auto mt-4"
           >
             Buy now
             <ShoppingCart size={18} />

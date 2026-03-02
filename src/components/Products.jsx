@@ -24,7 +24,7 @@ const Products = () => {
 
   return (
     <>
-      <div className="py-12 flex items-center justify-center gap-6 flex-wrap overflow-auto">
+      <div className="py-12 m-1 flex items-center justify-center gap-6 md:gap-8 flex-wrap">
         {ProductsList.slice(0, 7).map((product, index) => (
           <ProductCard
             key={product.id}
@@ -36,10 +36,10 @@ const Products = () => {
             onClick={onClick}
           />
         ))}
-        <div
+        {/* <div
           id="ProductCard"
           className="flex flex-col z-auto w-[20.5rem] md:w-[17.5rem] h-[25rem] rounded-lg shadow-[0px_0px_4px_#d4d4d4] "
-        ></div>
+        ></div> */}
       </div>
       {showDetails && (
         <ProductDetails productID={productID} setShowDetails={setShowDetails} />
