@@ -2,7 +2,7 @@ const ProductsList = [
   {
     id: "ch-c-001",
     title: "40A MPPT Solar Charge Controller with Monitoring",
-    imageUrl: "/imgs/ch/1.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 20000,
     currency: "XAF",
     category: "Charge Controller",
@@ -10,7 +10,7 @@ const ProductsList = [
   {
     id: "ch-c-002",
     title: "60A PWM Solar Charge Controller",
-    imageUrl: "/imgs/ch/2.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 25000,
     currency: "XAF",
     category: "Charge Controller",
@@ -18,7 +18,7 @@ const ProductsList = [
   {
     id: "sp-001",
     title: "150W Polycrystalline Solar Panel",
-    imageUrl: "/imgs/ch/3.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 35000,
     currency: "XAF",
     category: "Solar Panel",
@@ -26,7 +26,7 @@ const ProductsList = [
   {
     id: "sp-002",
     title: "250W Monocrystalline Solar Panel",
-    imageUrl: "/imgs/ch/4.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 60000,
     currency: "XAF",
     category: "Solar Panel",
@@ -34,7 +34,7 @@ const ProductsList = [
   {
     id: "inv-001",
     title: "500W Pure Sine Wave Inverter",
-    imageUrl: "/imgs/ch/5.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 50000,
     currency: "XAF",
     category: "Inverter",
@@ -42,7 +42,7 @@ const ProductsList = [
   {
     id: "inv-002",
     title: "1500W Hybrid Inverter with LCD Display",
-    imageUrl: "/imgs/ch/6.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 120000,
     currency: "XAF",
     category: "Inverter",
@@ -50,7 +50,7 @@ const ProductsList = [
   {
     id: "bat-001",
     title: "12V 100Ah Deep Cycle Battery",
-    imageUrl: "/imgs/ch/7.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 75000,
     currency: "XAF",
     category: "Battery",
@@ -58,7 +58,7 @@ const ProductsList = [
   {
     id: "bat-002",
     title: "12V 200Ah Solar AGM Battery",
-    imageUrl: "/imgs/ch/8.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 135000,
     currency: "XAF",
     category: "Battery",
@@ -66,7 +66,7 @@ const ProductsList = [
   {
     id: "kit-001",
     title: "Complete 300W Solar Kit with Cables",
-    imageUrl: "/imgs/ch/9.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 150000,
     currency: "XAF",
     category: "Solar Kit",
@@ -74,7 +74,7 @@ const ProductsList = [
   {
     id: "kit-002",
     title: "500W Home Solar Power Kit",
-    imageUrl: "/imgs/ch/10.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 250000,
     currency: "XAF",
     category: "Solar Kit",
@@ -82,7 +82,7 @@ const ProductsList = [
   {
     id: "acc-001",
     title: "Solar PV Combiner Box 4 in 1 out",
-    imageUrl: "/imgs/ch/11.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 30000,
     currency: "XAF",
     category: "Accessory",
@@ -90,7 +90,7 @@ const ProductsList = [
   {
     id: "acc-002",
     title: "MC4 Connector Pair",
-    imageUrl: "/imgs/ch/12.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 4000,
     currency: "XAF",
     category: "Accessory",
@@ -98,7 +98,7 @@ const ProductsList = [
   {
     id: "cable-001",
     title: "6mm² Solar Cable 10m",
-    imageUrl: "/imgs/ch/13.webp",
+    imageUrl: "/imgs/me34.jpg",
     price: 7000,
     currency: "XAF",
     category: "Cable",
@@ -106,7 +106,7 @@ const ProductsList = [
   {
     id: "cable-002",
     title: "16mm² Battery Cable 5m",
-    imageUrl: "/imgs/ch/14.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 12000,
     currency: "XAF",
     category: "Cable",
@@ -114,7 +114,7 @@ const ProductsList = [
   {
     id: "charge-003",
     title: "MPPT 80A Charge Controller",
-    imageUrl: "/imgs/ch/15.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 50000,
     currency: "XAF",
     category: "Charge Controller",
@@ -122,7 +122,7 @@ const ProductsList = [
   {
     id: "sp-003",
     title: "100W Flexible Solar Panel",
-    imageUrl: "/imgs/ch/16.png",
+    imageUrl: "/imgs/me34.jpg",
     price: 25000,
     currency: "XAF",
     category: "Solar Panel",
@@ -130,7 +130,7 @@ const ProductsList = [
   {
     id: "sp-004",
     title: "300W Monocrystalline Solar Panel",
-    imageUrl: "/imgs/ch/17.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 90000,
     currency: "XAF",
     category: "Solar Panel",
@@ -138,7 +138,7 @@ const ProductsList = [
   {
     id: "inv-003",
     title: "1000W Modified Sine Wave Inverter",
-    imageUrl: "/imgs/ch/18.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 75000,
     currency: "XAF",
     category: "Inverter",
@@ -146,7 +146,7 @@ const ProductsList = [
   {
     id: "inv-004",
     title: "3000W Hybrid Solar Inverter",
-    imageUrl: "/imgs/ch/19.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 240000,
     currency: "XAF",
     category: "Inverter",
@@ -154,7 +154,7 @@ const ProductsList = [
   {
     id: "bat-003",
     title: "24V 100Ah Deep Cycle Battery",
-    imageUrl: "/imgs/ch/20.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 130000,
     currency: "XAF",
     category: "Battery",
@@ -162,7 +162,7 @@ const ProductsList = [
   {
     id: "bat-004",
     title: "24V 200Ah AGM Solar Battery",
-    imageUrl: "/imgs/ch/21.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 210000,
     currency: "XAF",
     category: "Battery",
@@ -170,7 +170,7 @@ const ProductsList = [
   {
     id: "kit-003",
     title: "1000W Complete Solar Kit",
-    imageUrl: "/imgs/ch/22.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 350000,
     currency: "XAF",
     category: "Solar Kit",
@@ -178,7 +178,7 @@ const ProductsList = [
   {
     id: "kit-004",
     title: "2000W Complete Home Solar System",
-    imageUrl: "/imgs/ch/23.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 560000,
     currency: "XAF",
     category: "Solar Kit",
@@ -186,7 +186,7 @@ const ProductsList = [
   {
     id: "acc-003",
     title: "DC Breaker 63A",
-    imageUrl: "/imgs/ch/24.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 9000,
     currency: "XAF",
     category: "Accessory",
@@ -194,7 +194,7 @@ const ProductsList = [
   {
     id: "acc-004",
     title: "12V Solar Light Kit",
-    imageUrl: "/imgs/ch/25.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 15000,
     currency: "XAF",
     category: "Accessory",
@@ -202,7 +202,7 @@ const ProductsList = [
   {
     id: "cable-003",
     title: "25mm² Solar Cable 5m",
-    imageUrl: "/imgs/ch/26.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 20000,
     currency: "XAF",
     category: "Cable",
@@ -210,7 +210,7 @@ const ProductsList = [
   {
     id: "cable-004",
     title: "10mm² Solar PV Cable 10m",
-    imageUrl: "/imgs/ch/27.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 10000,
     currency: "XAF",
     category: "Cable",
@@ -218,7 +218,7 @@ const ProductsList = [
   {
     id: "charge-004",
     title: "60A Solar MPPT Charge Controller with LCD",
-    imageUrl: "/imgs/ch/28.jpg",
+    imageUrl: "/imgs/me34.jpg",
     price: 45000,
     currency: "XAF",
     category: "Charge Controller",
@@ -226,7 +226,7 @@ const ProductsList = [
   {
     id: "sp-005",
     title: "50W Polycrystalline Solar Panel",
-    imageUrl: "/imgs/ch/29.png",
+    imageUrl: "/imgs/me34.jpg",
     price: 15000,
     currency: "XAF",
     category: "Solar Panel",
@@ -234,7 +234,7 @@ const ProductsList = [
   {
     id: "sp-006",
     title: "400W Monocrystalline Solar Panel",
-    imageUrl: "/imgs/ch/30.png",
+    imageUrl: "/imgs/me34.jpg",
     price: 120000,
     currency: "XAF",
     category: "Solar Panel",
