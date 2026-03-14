@@ -1,7 +1,7 @@
 const ProductsList = [
   {
     id: "ch-c-001",
-    title: "40A MPPT Solar Charge Controller with Monitoring",
+    title: "40A MPPT Charge Controller",
     imageUrl: "/imgs/me34.jpg",
     price: 20000,
     currency: "XAF",
@@ -9,7 +9,7 @@ const ProductsList = [
   },
   {
     id: "ch-c-002",
-    title: "60A PWM Solar Charge Controller",
+    title: "60A PWM Charge Controller",
     imageUrl: "/imgs/me34.jpg",
     price: 25000,
     currency: "XAF",
@@ -17,7 +17,7 @@ const ProductsList = [
   },
   {
     id: "sp-001",
-    title: "150W Polycrystalline Solar Panel",
+    title: "PV 150W Poly Solar Panel",
     imageUrl: "/imgs/me34.jpg",
     price: 35000,
     currency: "XAF",
@@ -25,7 +25,7 @@ const ProductsList = [
   },
   {
     id: "sp-002",
-    title: "250W Monocrystalline Solar Panel",
+    title: "250W Mono Solar Panel",
     imageUrl: "/imgs/me34.jpg",
     price: 60000,
     currency: "XAF",
@@ -41,7 +41,7 @@ const ProductsList = [
   },
   {
     id: "inv-002",
-    title: "1500W Hybrid Inverter with LCD Display",
+    title: "1500W Hybrid Inverter",
     imageUrl: "/imgs/me34.jpg",
     price: 120000,
     currency: "XAF",
@@ -49,7 +49,7 @@ const ProductsList = [
   },
   {
     id: "bat-001",
-    title: "12V 100Ah Deep Cycle Battery",
+    title: "12V 100Ah Gel Battery",
     imageUrl: "/imgs/me34.jpg",
     price: 75000,
     currency: "XAF",
@@ -57,7 +57,7 @@ const ProductsList = [
   },
   {
     id: "bat-002",
-    title: "12V 200Ah Solar AGM Battery",
+    title: "12V 200Ah AGM Battery",
     imageUrl: "/imgs/me34.jpg",
     price: 135000,
     currency: "XAF",
@@ -65,7 +65,7 @@ const ProductsList = [
   },
   {
     id: "kit-001",
-    title: "Complete 300W Solar Kit with Cables",
+    title: "Complete 300W Solar Kit",
     imageUrl: "/imgs/me34.jpg",
     price: 150000,
     currency: "XAF",
@@ -73,7 +73,7 @@ const ProductsList = [
   },
   {
     id: "kit-002",
-    title: "500W Home Solar Power Kit",
+    title: "Complete 500W Solar Kit",
     imageUrl: "/imgs/me34.jpg",
     price: 250000,
     currency: "XAF",
@@ -81,7 +81,7 @@ const ProductsList = [
   },
   {
     id: "acc-001",
-    title: "Solar PV Combiner Box 4 in 1 out",
+    title: "Solar PV Combiner Box 4 in 1",
     imageUrl: "/imgs/me34.jpg",
     price: 30000,
     currency: "XAF",
@@ -97,15 +97,15 @@ const ProductsList = [
   },
   {
     id: "cable-001",
-    title: "6mm² Solar Cable 10m",
+    title: "6mm² Solar Cable 1 meter (positive and negative)",
     imageUrl: "/imgs/me34.jpg",
-    price: 7000,
+    price: 4000,
     currency: "XAF",
     category: "Cable",
   },
   {
     id: "cable-002",
-    title: "16mm² Battery Cable 5m",
+    title: "16mm² Battery Cable 1 meter (positive and negative)",
     imageUrl: "/imgs/me34.jpg",
     price: 12000,
     currency: "XAF",
@@ -129,7 +129,7 @@ const ProductsList = [
   },
   {
     id: "sp-004",
-    title: "300W Monocrystalline Solar Panel",
+    title: "300W Mono Solar Panel",
     imageUrl: "/imgs/me34.jpg",
     price: 90000,
     currency: "XAF",
@@ -153,7 +153,7 @@ const ProductsList = [
   },
   {
     id: "bat-003",
-    title: "24V 100Ah Deep Cycle Battery",
+    title: "24V 100Ah Gel Battery",
     imageUrl: "/imgs/me34.jpg",
     price: 130000,
     currency: "XAF",
@@ -161,7 +161,7 @@ const ProductsList = [
   },
   {
     id: "bat-004",
-    title: "24V 200Ah AGM Solar Battery",
+    title: "24V 200Ah AGM Battery",
     imageUrl: "/imgs/me34.jpg",
     price: 210000,
     currency: "XAF",
@@ -217,7 +217,7 @@ const ProductsList = [
   },
   {
     id: "charge-004",
-    title: "60A Solar MPPT Charge Controller with LCD",
+    title: "60A MPPT Charge Controller",
     imageUrl: "/imgs/me34.jpg",
     price: 45000,
     currency: "XAF",
@@ -225,7 +225,7 @@ const ProductsList = [
   },
   {
     id: "sp-005",
-    title: "50W Polycrystalline Solar Panel",
+    title: "PV 50W Poly Solar Panel",
     imageUrl: "/imgs/me34.jpg",
     price: 15000,
     currency: "XAF",
@@ -233,7 +233,7 @@ const ProductsList = [
   },
   {
     id: "sp-006",
-    title: "400W Monocrystalline Solar Panel",
+    title: "PV 400W Mono Solar Panel",
     imageUrl: "/imgs/me34.jpg",
     price: 120000,
     currency: "XAF",
