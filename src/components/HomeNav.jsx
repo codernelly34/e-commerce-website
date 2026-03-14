@@ -50,7 +50,7 @@ const HomeNav = () => {
             className="transition-all duration-300 hover:scale-110"
           >
             <Link
-              href={`${value === "shop_now" ? "/shop" : `/${value}` | (value === "contact_us") ? "/contactUs" : `/${value}`}`}
+              href={`${value === "shop_now" ? "/shop" : value === "contact_us" ? "/contactUs" : `/${value}`}`}
               className="transition-all duration-300 inline-block hover:underline hover:decoration-white decoration-transparent capitalize text-blue-200"
             >
               {value.replace("_", " ")}
