@@ -18,7 +18,7 @@ const SummaryModal = () => {
     <AnimatePresence>
       {showSummary && (
         <motion.div
-          className="fixed inset-0 z-[9999] bg-black/50 flex items-center justify-center"
+          className="fixed inset-0 z-[9999] bg-black/50 grid place-items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -31,7 +31,7 @@ const SummaryModal = () => {
           >
             <button
               onClick={() => setShowSummary(false)}
-              className="absolute top-3 right-3 text-gray-600 hover:text-black transition"
+              className="absolute top-3 right-3 text-gray-600 hover:text-black transition cursor-pointer"
             >
               <X size={26} />
             </button>
