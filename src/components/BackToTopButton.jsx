@@ -26,7 +26,7 @@ export default function BackToTop() {
       {showButton && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-black text-white shadow-lg hover:bg-gray-800 transition-all"
+          className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-black text-white shadow-lg hover:bg-gray-800 transition-all cursor-pointer"
           title="scroll back to top"
         >
           <ArrowUp className="w-5 h-5" />

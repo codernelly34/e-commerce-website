@@ -13,7 +13,7 @@ const Home = () => {
         <Text />
       </header>
       <main id="mainSection" className="mb-20">
-        <section id="quickShow" className="relative">
+        <section id="quickShow" className="relative @container">
           <Categories />
           <div className="text-center py-10">
             <span className="text-3xl font-medium">Top best products</span>
