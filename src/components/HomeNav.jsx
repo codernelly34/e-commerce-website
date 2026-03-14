@@ -44,14 +44,14 @@ const HomeNav = () => {
             : "right-[1000px] opacity-0 md:opacity-100"
         } transition-all duration-300`}
       >
-        {["shop_now", "Account", "About", "Contact_Us"].map((value, index) => (
+        {["account", "shop_now", "about", "contact_us"].map((value, index) => (
           <li
             key={index}
             className="transition-all duration-300 hover:scale-110"
           >
             <Link
-              href={`${value === "shop_now" ? "#quickShow" : `/${value}`}`}
-              className="transition-all duration-300 inline-block hover:underline hover:decoration-white decoration-transparent capitalize"
+              href={`${value === "shop_now" ? "/shop" : `/${value}` | (value === "contact_us") ? "/contactUs" : `/${value}`}`}
+              className="transition-all duration-300 inline-block hover:underline hover:decoration-white decoration-transparent capitalize text-blue-200"
             >
               {value.replace("_", " ")}
             </Link>

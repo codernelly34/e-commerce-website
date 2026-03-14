@@ -23,29 +23,36 @@ const Navbar = () => {
               alt="App icon"
               className="h-14 w-14 p-0 transition-all duration-300 hover:scale-125"
             />
-            <h1 className="text-xl font-semibold">Electro Tech</h1>
+            <h1 className="hidden md:block text-xl font-semibold">
+              Electro Tech
+            </h1>
           </Link>
         </div>
 
-        <div className="flex items-center gap-6">
-          <Link href="/products" className="hover:underline">
-            Shop Products
-          </Link>
-          <Link href="/shop" className="hover:underline">
-            My Cart
-          </Link>
+        <div className="flex items-center gap-4">
+          <div className="flex flex-col md:flex-row gap-2 md:gap-4">
+            <Link
+              href="/products"
+              className="hover:scale-110 transition-all duration-300 underline text-blue-300"
+            >
+              Shop Products
+            </Link>
 
-          <div className="flex items-center gap-3">
-            <ShoppingCart size={24} />
-            <span className="text-sm">
-              {totalQuantity} item{totalQuantity === 1 ? "" : "s"} | XAF{" "}
-              {totalPrice.toFixed(2)} frs
-            </span>
+            <Link
+              href={"/shop"}
+              className="flex items-center gap-1 hover:scale-110 transition-all duration-300 underline text-blue-300"
+            >
+              <ShoppingCart size={24} />
+              <span className="text-sm">
+                {totalQuantity} item{totalQuantity === 1 ? "" : "s"} | XAF{" "}
+                {totalPrice.toFixed(2)} frs
+              </span>
+            </Link>
           </div>
 
           <button
             onClick={() => setShowSummary(true)}
-            className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold px-4 py-2 rounded shadow transition duration-300"
+            className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold px-4 py-2 rounded shadow transition duration-300 cursor-pointer"
           >
             Confirm & Pay
           </button>
