@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`flex items-center justify-between p-4 bg-gray-900 text-white shadow ${roboto.className}`}
+        className={`flex items-center justify-between p-1 bg-gray-900 text-white shadow ${roboto.className}`}
       >
         <div className="">
           <Link href="/" className="flex items-center gap-3">
@@ -21,7 +21,7 @@ const Navbar = () => {
               width={800}
               height={500}
               alt="App icon"
-              className="h-14 w-14 p-0 transition-all duration-300 hover:scale-125"
+              className="h-12 w-12 md:h-14 md:w-14 p-0 transition-all duration-300 hover:scale-125"
             />
             <h1 className="hidden md:block text-xl font-semibold">
               Electro Tech
@@ -30,7 +30,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <div className="flex flex-col md:flex-row gap-2 md:gap-4">
+          <div className="flex flex-col md:flex-row gap-2 md:gap-4 max-md:scale-90">
             <Link
               href="/products"
               className="hover:scale-110 transition-all duration-300 underline text-blue-300"
