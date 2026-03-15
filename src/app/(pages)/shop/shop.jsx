@@ -46,38 +46,40 @@ const Shop = () => {
 
   return (
     <div id="shopping card">
-      <main className="flex flex-col mt-8 md:flex-row gap-16 md:gap-2 p-1">
+      <main className="flex flex-col md:flex-row gap-14 p-4">
         <section
           id="shopping-list"
-          className="overflow-auto scrollbar-thin w-full md:w-1/2 shadow-md p-1 h-[95vh] rounded bg-gray-200 relative"
+          className={`overflow-auto scrollbar-thin shadow-md h-[85vh] rounded bg-gray-100 relative w-full md:w-1/2`}
         >
           {productsToShop.length > 0 ? (
             <>
               <article
-                className={`${roboto.className} font-light text-xl shadow p-1 rounded bg-white mb-8 sticky z-auto top-0`}
+                className={`${roboto.className} shadow bg-white sticky z-auto top-0`}
               >
-                <h3 className="text-gray-800 text-center text-2xl font-bold py-2 [word-spacing:8px] mb-2 shadow">
+                <h3 className="text-gray-800 text-center text-xl font-bold py-2 [word-spacing:8px] shadow">
                   Shopping List <ShopIcon />
                 </h3>
-                <span className="flex items-center gap-8 pl-8 py-2">
-                  <p>Total products:</p>
-                  <b className="font-semibold">{productsToShop.length}</b>
-                </span>
-                <span className="flex items-center gap-9.5 pl-8 py-1">
-                  <p>Total quantity:</p>
-                  <b className="font-semibold">{totalQuantity}</b>
-                </span>
-                <span className="flex items-center gap-14.5 pl-8 py-2">
-                  <p>Total prices:</p>
-                  <b className="font-semibold">
-                    XAF {totalPrice.toFixed(2)}
-                    <span className=" inline-block font-light pl-0.5">frs</span>
-                  </b>
-                </span>
-                <span className="block text-end pr-8 mt-2 pb-1">
+                <div className="flex flex-row gap-3 py-3">
+                  <span className="block px-3">
+                    <p>Total products:</p>
+                    <p>Total quantity:</p>
+                    <p>Total prices:</p>
+                  </span>
+                  <span className="block">
+                    <p className="font-semibold">{productsToShop.length}</p>
+                    <p className="font-semibold">{totalQuantity}</p>
+                    <p className="font-semibold">
+                      XAF {totalPrice.toFixed(2)}
+                      <span className=" inline-block font-light pl-0.5">
+                        frs
+                      </span>
+                    </p>
+                  </span>
+                </div>
+                <span className="block text-end">
                   <button
                     onClick={() => setShowSummary(true)}
-                    className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold w-50 py-2 rounded shadow transition duration-300 cursor-pointer"
+                    className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold w-50 py-2 rounded shadow transition duration-300 cursor-pointer m-1"
                   >
                     Confirm & Pay
                   </button>
@@ -86,7 +88,7 @@ const Shop = () => {
               {productsToShop.map((product) => (
                 <article
                   key={product.id}
-                  className="shadow p-1 rounded bg-white mb-8"
+                  className="shadow p-1 rounded bg-white mx-1 my-3"
                 >
                   <span className="flex flex-row gap-2">
                     <Image
@@ -169,17 +171,17 @@ const Shop = () => {
 
         <section
           id="quickShoppingProducts"
-          className="overflow-auto scrollbar-thin h-[95vh] w-full md:w-1/2 p-1 bg-gray-200 rounded shadow-lg relative"
+          className="overflow-auto scrollbar-thin h-[85vh] bg-gray-100 rounded shadow-lg relative w-full md:w-1/2"
         >
           <h3
-            className={`${roboto.className} bg-white text-gray-800 rounded-xs text-center text-2xl font-bold py-2 mb-2 shadow sticky top-0`}
+            className={`${roboto.className} bg-white text-gray-800 rounded-xs text-center text-xl font-bold py-2 shadow sticky top-0`}
           >
             Shop more Products <ShopIcon />
           </h3>
           {ProductsList.map((product) => (
             <article
               key={product.id}
-              className="shadow rounded p-2 mb-8 bg-white"
+              className="shadow rounded p-2 mx-1 my-3 bg-white"
             >
               <span className="flex flex-row gap-2">
                 <Image
