@@ -26,37 +26,42 @@ const HomeNav = () => {
       className="flex items-center justify-between w-full p-1.5"
     >
       <div id="logoDiv">
-        <Link href="/">
+        <Link href="/" className="flex justify-center items-center">
           <Image
             src="/favicon.png"
             width={800}
             height={500}
             alt="App icon"
-            className="h-14 w-14 p-0 transition-all duration-300 hover:scale-125"
+            className="h-10 w-10 md:h-14 md:w-14 p-0 transition-all duration-300 hover:scale-125"
           />
+          <span className="flex ml-1.5 gap-2 text-white">
+            <b>Electro</b> <b className="hidden md:block"> Tech</b>
+          </span>
         </Link>
       </div>
 
       <ul
-        className={`flex items-center justify-between gap-14 mr-11 text-white font-semibold text-lg z-50 mobile ${
+        className={`flex items-center justify-between gap-10 mr-11 text-white font-semibold text-lg z-50 mobile ${
           isMenuOpen
             ? "right-[-42px] opacity-100"
             : "right-[1000px] opacity-0 md:opacity-100"
         } transition-all duration-300`}
       >
-        {["account", "shop_now", "about", "contact_us"].map((value, index) => (
-          <li
-            key={index}
-            className="transition-all duration-300 hover:scale-110"
-          >
-            <Link
-              href={`${value === "shop_now" ? "/shop" : value === "contact_us" ? "/contactUs" : `/${value}`}`}
-              className="transition-all duration-300 inline-block hover:underline hover:decoration-white decoration-transparent capitalize text-blue-200"
+        {["account", "shop_now", "about_us", "contact_us"].map(
+          (value, index) => (
+            <li
+              key={index}
+              className="transition-all duration-300 hover:scale-110"
             >
-              {value.replace("_", " ")}
-            </Link>
-          </li>
-        ))}
+              <Link
+                href={`${value === "shop_now" ? "/shop" : value === "contact_us" ? "/contactUs" : value === "about_us" ? "/aboutUs" : `/${value}`}`}
+                className="transition-all duration-300 inline-block hover:underline hover:decoration-white decoration-transparent capitalize text-blue-200"
+              >
+                {value.replace("_", " ")}
+              </Link>
+            </li>
+          ),
+        )}
       </ul>
       <div
         id="MenuSwitch"
@@ -65,19 +70,19 @@ const HomeNav = () => {
       >
         {!isMenuOpen ? (
           <Menu
-            size={35}
-            strokeWidth={2.75}
+            size={25}
+            strokeWidth={2}
             className={`transition-all duration-300 ${show && "rotate-180"}`}
           />
         ) : (
           <X
-            size={35}
+            size={25}
             color="#ffffff"
-            strokeWidth={2.75}
+            strokeWidth={2}
             className={`transition-all duration-300 ${show && "rotate-180"}`}
           />
         )}
-        <p className="font-semibold text-lg ml-0.5">Account</p>
+        <p className="font-semibold ml-1.5">About Us</p>
       </div>
     </nav>
   );
