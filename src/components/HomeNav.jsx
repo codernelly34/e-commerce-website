@@ -32,6 +32,7 @@ const HomeNav = () => {
             width={800}
             height={500}
             alt="App icon"
+            priority
             className="h-10 w-10 md:h-14 md:w-14 p-0 transition-all duration-300 hover:scale-125"
           />
           <span className="flex ml-1.5 gap-2 text-white">

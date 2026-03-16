@@ -18,9 +18,10 @@ const ProductCard = ({ title, imageUrl, currency, price, onClick, id }) => {
           <Image
             src={imageUrl}
             alt={title || "Product image"}
+            sizes="(min-width: 640px) 200px, 150px"
+            priority
             fill
             className="object-contain"
-            loading="lazy"
           />
         </div>
         <div className="ml-2.5 mt-2.5">

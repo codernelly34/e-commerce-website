@@ -37,20 +37,13 @@ export const ProductDetails = ({ setShowDetails, productID, showDetails }) => {
             <h2 className="text-center font-semibold my-3">
               {product[0].title}
             </h2>
-            <div
-              style={{
-                width: "250px",
-                height: "150px",
-                position: "relative",
-                margin: "0 auto",
-              }}
-              className="border border-[#333] rounded"
-            >
+            <div className="w-[200px] h-[200px] relative mx-auto">
               <Image
                 src={product[0].imageUrl}
-                alt="example"
+                alt={product[0].title || "Product image"}
                 fill
-                style={{ objectFit: "contain" }}
+                className="object-contain"
+                sizes="200px"
               />
             </div>
             <div id="detailsInfo" className="p-2 ">
