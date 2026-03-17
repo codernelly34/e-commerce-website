@@ -14,7 +14,7 @@ export const ShoppingProvider = ({ children }) => {
   const addProduct = (product) => {
     setProductsToShop((prev) => {
       if (prev.some((p) => p.id === product.id)) return prev;
-      return [...prev, product];
+      return [product, ...prev];
     });
 
     setQuantities((prev) => {
@@ -44,9 +44,9 @@ export const ShoppingProvider = ({ children }) => {
     () =>
       productsToShop.reduce(
         (total, product) => total + (quantities[product.id] || 0),
-        0
+        0,
       ),
-    [productsToShop, quantities]
+    [productsToShop, quantities],
   );
 
   const totalPrice = useMemo(
@@ -54,9 +54,9 @@ export const ShoppingProvider = ({ children }) => {
       productsToShop.reduce(
         (total, product) =>
           total + product.price * (quantities[product.id] || 0),
-        0
+        0,
       ),
-    [productsToShop, quantities]
+    [productsToShop, quantities],
   );
 
   return (
