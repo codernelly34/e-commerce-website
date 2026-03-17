@@ -45,7 +45,7 @@ const Navbar = () => {
               <ShoppingCart size={24} />
               <span className="text-sm">
                 {totalQuantity} item{totalQuantity === 1 ? "" : "s"} | XAF{" "}
-                {totalPrice.toFixed(2)} frs
+                {totalPrice} frs
               </span>
             </Link>
           </div>
