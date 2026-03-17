@@ -54,22 +54,22 @@ const Categories = () => {
   return (
     <nav
       id="nav"
-      className="bg-white sticky top-0 p-3 shadow w-full z-50 mb-6 border-b border-gray-200"
+      className="bg-white sticky top-0 p-2 shadow w-full z-50 mb-6 border-b border-gray-200"
     >
-      <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4 text-center tracking-tight">
-        Browse by Product Type
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-800 text-center">
+        Browse by Product Type:
       </h2>
 
-      <section className="flex items-center gap-4">
+      <section className="flex items-center gap-2">
         {/* Scroll control button */}
         <div
           id="icon"
           className="transition-all duration-300 active:scale-90 flex items-center justify-center cursor-pointer shadow border border-gray-300 py-2 px-3 rounded-full hover:bg-gray-100"
           onClick={handleScroll}
         >
-          <LayoutDashboard size={22} strokeWidth={2.2} />
+          <LayoutDashboard size={20} strokeWidth={2.2} />
           <ArrowRightFromLine
-            size={22}
+            size={20}
             strokeWidth={2.2}
             className={`ml-1 ${
               !scrollForward ? "rotate-180" : ""
@@ -80,38 +80,41 @@ const Categories = () => {
         {/* Search input */}
         <ul
           ref={navRef}
-          className="w-full overflow-x-auto whitespace-nowrap flex gap-3 p-1 scrollbar-thin"
+          className="w-full overflow-x-auto whitespace-nowrap flex py-2 items-center gap-3 scrollbar-thin"
         >
           <li
             id="search"
-            className="transition-all duration-300 hover:scale-105"
+            className="transition-all duration-300 hover:scale-95 flex items-center relative"
           >
-            <span className="flex items-center relative">
-              <input
-                type="text"
-                name="search-item"
-                id="search-item"
-                placeholder="Search products..."
-                className="shadow border border-gray-300 rounded-full py-1.5 px-3 text-sm focus:outline-none focus:ring-2 focus:ring-gray-300"
+            <input
+              type="text"
+              name="search-item"
+              id="search-item"
+              placeholder="Search products..."
+              className="shadow border border-gray-300 rounded-full py-1.5 px-3 text-base max-sm:w-[160px] focus:outline-none focus:ring-2 focus:ring-gray-300 focus:rounded-md transition-all ease-linear duration-300"
+            />
+            <label
+              htmlFor="search-item"
+              className="absolute right-2 cursor-pointer"
+            >
+              <Search
+                size={20}
+                strokeWidth={3}
+                color="#333"
+                className="bg-white"
               />
-              <label
-                htmlFor="search-item"
-                className="absolute right-2 cursor-pointer"
-              >
-                <Search size={18} color="#333" />
-              </label>
-            </span>
+            </label>
           </li>
 
           {/* Category nav links */}
           {categories.map((value, index) => (
             <li
               key={index}
-              className="transition-all duration-300 text-sm md:text-base font-semibold rounded-full hover:scale-105 shadow border border-gray-300 bg-white"
+              className="m-0 p-0 transition-all duration-300 hover:scale-105 ease-linear"
             >
               <Link
                 href={`/${value.replace(" ", "_")}`}
-                className="inline-block px-3 py-1 capitalize text-gray-800 hover:text-gray-900"
+                className="text-sm md:text-base font-semibold rounded-full shadow border border-gray-300 bg-white px-4 py-2 capitalize text-gray-800"
               >
                 {value === "products" ? "All" : value}
               </Link>
