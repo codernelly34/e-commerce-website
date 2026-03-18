@@ -57,7 +57,7 @@ const Categories = () => {
       className="bg-white sticky top-0 p-2 shadow w-full z-50 mb-6 border-b border-gray-200"
     >
       <h2 className="text-2xl md:text-3xl font-bold text-gray-800 text-center">
-        Browse by Product Type:
+        Shop By Category:
       </h2>
 
       <section className="flex items-center gap-2">
@@ -91,7 +91,7 @@ const Categories = () => {
               name="search-item"
               id="search-item"
               placeholder="Search products..."
-              className="shadow border border-gray-300 rounded-full py-1.5 px-3 text-base max-sm:w-[160px] focus:outline-none focus:ring-2 focus:ring-gray-300 focus:rounded-md transition-all ease-linear duration-300"
+              className="shadow border border-gray-300 rounded-full py-1.5 px-3 text-base max-sm:w-40 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:rounded-md transition-all ease-linear duration-300"
             />
             <label
               htmlFor="search-item"
