@@ -28,13 +28,7 @@ const Shop = () => {
   useEffect(() => {
     if (!productParam) return;
 
-    const getProduct = ProductsList.find(
-      (product) => product.id === productParam,
-    );
-
-    if (getProduct) {
-      addProduct(getProduct);
-    }
+    addProduct(productParam);
   }, [productParam]);
 
   const toggleItem = (id) => {
@@ -192,7 +186,7 @@ const Shop = () => {
                   toggleItem={toggleItem}
                 />
                 <button
-                  onClick={() => addProduct(product)}
+                  onClick={() => addProduct(product.id)}
                   className="px-2 py-1 bg-gray-100 rounded mt-2 content-center cursor-pointer whitespace-nowrap"
                 >
                   Add to List{" "}

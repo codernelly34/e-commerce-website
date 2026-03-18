@@ -1,13 +1,20 @@
+"use client";
+
 import ProductsList from "@/utils/productsList.js";
 import { X, ShoppingCart } from "lucide-react";
 import Image from "next/image.js";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { useProductDetails } from "@/context/ProductDetailsContext.jsx";
 
-export const ProductDetails = ({ setShowDetails, productID, showDetails }) => {
+export const ProductDetails = () => {
   const router = useRouter();
+
+  const { setShowDetails, productID, showDetails } = useProductDetails();
+
   const Link = () => {
     router.push(`/shop?product=${productID}`);
+    setShowDetails(false);
   };
   const product = ProductsList.filter((product) => product.id === productID);
 

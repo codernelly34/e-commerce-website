@@ -1,4 +1,7 @@
 import BackToTop from "@/components/BackToTopButton.jsx";
+import { ProductDetails } from "@/components/ProductDetails.jsx";
+import { ProductDetailsProvider } from "@/context/ProductDetailsContext.jsx";
+import { ShoppingProvider } from "@/context/ShoppingContext.jsx";
 import "@/styles/globals.css";
 import { Montserrat } from "next/font/google";
 
@@ -10,7 +13,8 @@ const montserrat = Montserrat({
 
 export const metadata = {
   title: "Solar/Electrical Online Store",
-  description: "Electro Tech is your all-in-one partner for solar and electrical installation, reliable maintenance, and quality equipment supply. We bring energy solutions that are efficient, affordable, and built to last.",
+  description:
+    "Electro Tech is your all-in-one partner for solar and electrical installation, reliable maintenance, and quality equipment supply. We bring energy solutions that are efficient, affordable, and built to last.",
   icons: {
     icon: "https://237electrotech.vercel.app/favicon.png",
   },
@@ -29,8 +33,13 @@ export default function RootLayout({ children }) {
         id="app"
         className={`${montserrat.className} antialiased text-base lg:text-lg`}
       >
-        {children}
-        <BackToTop />
+        <ShoppingProvider>
+          <ProductDetailsProvider>
+            {children}
+            <ProductDetails />
+            <BackToTop />
+          </ProductDetailsProvider>
+        </ShoppingProvider>
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, use, useState, useMemo } from "react";
+import ProductsList from "@/utils/productsList.js";
 
 const ShoppingContext = createContext();
 
@@ -11,17 +12,18 @@ export const ShoppingProvider = ({ children }) => {
   const [quantities, setQuantities] = useState({});
   const [showSummary, setShowSummary] = useState(false);
 
-  const addProduct = (product) => {
+  const addProduct = (id) => {
+    const getProduct = ProductsList.find((product) => product.id === id);
     setProductsToShop((prev) => {
-      if (prev.some((p) => p.id === product.id)) return prev;
-      return [product, ...prev];
+      if (prev.some((p) => p.id === getProduct.id)) return prev;
+      return [getProduct, ...prev];
     });
 
     setQuantities((prev) => {
-      if (prev[product.id] !== undefined) return prev;
+      if (prev[id] !== undefined) return prev;
       return {
         ...prev,
-        [product.id]: 1,
+        [id]: 1,
       };
     });
   };

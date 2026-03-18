@@ -2,13 +2,23 @@ import Image from "next/image";
 import { ShoppingCart } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
+import { useProductDetails } from "@/context/ProductDetailsContext.jsx";
+import { useShopping } from "@/context/ShoppingContext.jsx";
 
-const ProductCard = ({ title, imageUrl, currency, price, onClick, id }) => {
+const ProductCard = ({ title, imageUrl, currency, price, id, value }) => {
   const router = useRouter();
+  const { addProduct } = useShopping();
+  const { setProductID, setShowDetails } = useProductDetails();
+
+  const handleClick = () => {
+    setProductID(id);
+    setShowDetails(true);
+  };
 
   const handleNavigate = useCallback(() => {
     if (id == null) return;
-    router.push(`/shop?product=${id}`);
+    if (value) router.push(`/shop?product=${id}`);
+    addProduct(id);
   }, [router, id]);
 
   return (
@@ -40,7 +50,7 @@ const ProductCard = ({ title, imageUrl, currency, price, onClick, id }) => {
           className="inline-block border border-gray-400 rounded font-medium w-full h-[40px] cursor-pointer transition-[scale] duration-300 ease-linear hover:scale-95 mb-1.5"
           title={`See details for ${title}`}
           aria-label={`Details for ${title}`}
-          onClick={() => onClick?.(id)}
+          onClick={handleClick}
         >
           Details
         </button>
@@ -49,7 +59,7 @@ const ProductCard = ({ title, imageUrl, currency, price, onClick, id }) => {
           className="inline-flex items-center justify-center gap-1 border border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white rounded font-medium transition-[background-color_color] duration-300 ease-linear w-full h-[40px] cursor-pointer"
           aria-label={`Buy ${title}`}
         >
-          Buy now
+          {value ? "Buy now" : "Add to list"}
           <ShoppingCart size={18} />
         </button>
       </span>
