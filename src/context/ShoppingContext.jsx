@@ -1,11 +1,11 @@
 "use client";
 
-import { createContext, use, useState, useMemo } from "react";
+import { createContext, useContext, useState, useMemo } from "react";
 import ProductsList from "@/utils/productsList.js";
 
 const ShoppingContext = createContext();
 
-export const useShopping = () => use(ShoppingContext);
+export const useShopping = () => useContext(ShoppingContext);
 
 export const ShoppingProvider = ({ children }) => {
   const [productsToShop, setProductsToShop] = useState([]);
@@ -62,7 +62,7 @@ export const ShoppingProvider = ({ children }) => {
   );
 
   return (
-    <ShoppingContext
+    <ShoppingContext.Provider
       value={{
         productsToShop,
         quantities,
@@ -76,6 +76,6 @@ export const ShoppingProvider = ({ children }) => {
       }}
     >
       {children}
-    </ShoppingContext>
+    </ShoppingContext.Provider>
   );
 };
