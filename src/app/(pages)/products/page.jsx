@@ -1,14 +1,27 @@
 "use client";
 
 import Categories from "@/components/Categories.jsx";
-import ProductsList from "@/utils/productsList.js";
-import ProductCard from "@/components/ProductCard.jsx";
+import CategoryUI from "./_products/CategoryUI.jsx";
 
 const Products = () => {
+  const CategoriesArray = [
+    "Charge Controller",
+    "Solar Panel",
+    "Inverter",
+    "Battery",
+    "Solar Kit",
+    "Accessory",
+    "Cable",
+  ];
+
   return (
-    <>
+    <div id="product_page">
       <Categories />
-      <div className="flex justify-center items-center flex-row flex-wrap gap-x-6 gap-y-6 sm:gap-y-12 max-w-[1260px] mx-auto">
+      {CategoriesArray.map((category, index) => (
+        <CategoryUI key={index} category={category} />
+      ))}
+
+      {/* <div className="flex justify-center items-center flex-row flex-wrap gap-x-6 gap-y-6 sm:gap-y-12 max-w-315 mx-auto">
         {ProductsList.map((product, index) => (
           <ProductCard
             key={product.id}
@@ -20,8 +33,8 @@ const Products = () => {
             value={false}
           />
         ))}
-      </div>
-    </>
+      </div> */}
+    </div>
   );
 };
 
