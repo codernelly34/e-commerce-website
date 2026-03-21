@@ -80,8 +80,11 @@ const Categories = () => {
         {/* Search input */}
         <ul
           ref={navRef}
-          className="w-full overflow-x-auto whitespace-nowrap flex py-2 items-center gap-3 scrollbar-thin"
+          className="w-full overflow-x-auto whitespace-nowrap flex py-2 items-center gap-3 hide-scrollbar"
         >
+          <style>{`
+          .hide-scrollbar::-webkit-scrollbar { display: none; }
+        `}</style>
           <li
             id="search"
             className="transition-all duration-300 hover:scale-95 flex items-center relative"
