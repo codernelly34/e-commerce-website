@@ -6,7 +6,7 @@ import ProductsList from "@/utils/productsList.js";
 const Products = () => {
   return (
     <>
-      <div className="flex justify-center items-center flex-row flex-wrap gap-x-6 gap-y-6 sm:gap-y-12 max-w-[1260px] mx-auto">
+      <div className="flex justify-center items-center flex-row flex-wrap gap-6 max-w-315 mx-auto">
         {ProductsList.slice(0, 8).map((product, index) => (
           <ProductCard
             key={product.id}

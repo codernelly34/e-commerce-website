@@ -22,7 +22,7 @@ export const ProductDetails = () => {
     <AnimatePresence>
       {showDetails && (
         <motion.div
-          className=" fixed inset-0 z-[9999] bg-black/50 grid place-items-center"
+          className=" fixed inset-0 z-9999 bg-black/50 grid place-items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -44,13 +44,13 @@ export const ProductDetails = () => {
             <h2 className="text-center font-semibold my-3">
               {product[0].title}
             </h2>
-            <div className="w-[200px] h-[200px] relative mx-auto">
+            <div className="w-62.5 h-62.5 relative mx-auto">
               <Image
                 src={product[0].imageUrl}
                 alt={product[0].title || "Product image"}
                 fill
                 className="object-contain"
-                sizes="200px"
+                sizes="250px"
               />
             </div>
             <div id="detailsInfo" className="p-2 ">
