@@ -116,7 +116,11 @@ const Categories = () => {
               className="m-0 p-0 transition-all duration-300 hover:scale-105 ease-linear"
             >
               <Link
-                href={`/${value.replace(" ", "_")}`}
+                href={
+                  value === "products"
+                    ? "/products"
+                    : `/products?category=${value.replace(" ", "_")}`
+                }
                 className="text-sm md:text-base font-semibold rounded-full shadow border border-gray-300 bg-white px-4 py-2 capitalize text-gray-800"
               >
                 {value === "products" ? "All" : value}

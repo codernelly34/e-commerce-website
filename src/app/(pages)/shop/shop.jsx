@@ -87,7 +87,7 @@ const Shop = () => {
                     alt={product.title}
                     width={320}
                     height={320}
-                    className="w-[150px] h-[150px] object-contain"
+                    className="w-37.5 h-37.5 object-contain"
                     sizes="150px"
                   />
                   <div className="content-center">
@@ -124,7 +124,7 @@ const Shop = () => {
                 <div
                   id="details"
                   className={`${
-                    openItems[product.id] ? "h-[10rem]" : "h-0"
+                    openItems[product.id] ? "h-40" : "h-0"
                   } overflow-hidden transition-all duration-300 ease-linear`}
                 >
                   <p>
@@ -176,7 +176,7 @@ const Shop = () => {
                 alt={product.title}
                 width={320}
                 height={320}
-                className="w-[150px] h-[150px] object-contain"
+                className="w-37.5 h-37.5 object-contain"
                 sizes="150px"
               />
               <div className="content-center">
@@ -201,7 +201,7 @@ const Shop = () => {
             <div
               id="details"
               className={`${
-                openItems[product.id] ? "h-[10rem]" : "h-0"
+                openItems[product.id] ? "h-40" : "h-0"
               } overflow-hidden transition-all duration-300 ease-linear`}
             >
               <p>
