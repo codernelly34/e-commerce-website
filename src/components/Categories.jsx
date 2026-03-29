@@ -10,7 +10,7 @@ const categories = [
   "batteries",
   "charge controller",
   "inverters",
-  "battery chargers",
+  "accessory",
   "solar kits",
 ];
 

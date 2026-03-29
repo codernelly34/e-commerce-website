@@ -21,7 +21,7 @@ const ProductsList = [
     imageUrl: "/imgs/me34.jpg",
     price: 35000,
     currency: "XAF",
-    category: "Solar Panel",
+    category: "Solar Panels",
   },
   {
     id: "sp-002",
@@ -29,7 +29,7 @@ const ProductsList = [
     imageUrl: "/imgs/me34.jpg",
     price: 60000,
     currency: "XAF",
-    category: "Solar Panel",
+    category: "Solar Panels",
   },
   {
     id: "inv-001",
@@ -37,7 +37,7 @@ const ProductsList = [
     imageUrl: "/imgs/me34.jpg",
     price: 50000,
     currency: "XAF",
-    category: "Inverter",
+    category: "Inverters",
   },
   {
     id: "inv-002",
@@ -45,7 +45,7 @@ const ProductsList = [
     imageUrl: "/imgs/me34.jpg",
     price: 120000,
     currency: "XAF",
-    category: "Inverter",
+    category: "Inverters",
   },
   {
     id: "bat-001",
@@ -53,7 +53,7 @@ const ProductsList = [
     imageUrl: "/imgs/me34.jpg",
     price: 75000,
     currency: "XAF",
-    category: "Battery",
+    category: "Batteries",
   },
   {
     id: "bat-002",
@@ -61,7 +61,7 @@ const ProductsList = [
     imageUrl: "/imgs/me34.jpg",
     price: 135000,
     currency: "XAF",
-    category: "Battery",
+    category: "Batteries",
   },
   {
     id: "kit-001",
@@ -69,7 +69,7 @@ const ProductsList = [
     imageUrl: "/imgs/me34.jpg",
     price: 150000,
     currency: "XAF",
-    category: "Solar Kit",
+    category: "Solar Kits",
   },
   {
     id: "kit-002",
@@ -77,7 +77,7 @@ const ProductsList = [
     imageUrl: "/imgs/me34.jpg",
     price: 250000,
     currency: "XAF",
-    category: "Solar Kit",
+    category: "Solar Kits",
   },
   {
     id: "acc-001",
@@ -125,7 +125,7 @@ const ProductsList = [
     imageUrl: "/imgs/me34.jpg",
     price: 25000,
     currency: "XAF",
-    category: "Solar Panel",
+    category: "Solar Panels",
   },
   {
     id: "sp-004",
@@ -133,7 +133,7 @@ const ProductsList = [
     imageUrl: "/imgs/me34.jpg",
     price: 90000,
     currency: "XAF",
-    category: "Solar Panel",
+    category: "Solar Panels",
   },
   {
     id: "inv-003",
@@ -141,7 +141,7 @@ const ProductsList = [
     imageUrl: "/imgs/me34.jpg",
     price: 75000,
     currency: "XAF",
-    category: "Inverter",
+    category: "Inverters",
   },
   {
     id: "inv-004",
@@ -149,7 +149,7 @@ const ProductsList = [
     imageUrl: "/imgs/me34.jpg",
     price: 240000,
     currency: "XAF",
-    category: "Inverter",
+    category: "Inverters",
   },
   {
     id: "bat-003",
@@ -157,7 +157,7 @@ const ProductsList = [
     imageUrl: "/imgs/me34.jpg",
     price: 130000,
     currency: "XAF",
-    category: "Battery",
+    category: "Batteries",
   },
   {
     id: "bat-004",
@@ -165,7 +165,7 @@ const ProductsList = [
     imageUrl: "/imgs/me34.jpg",
     price: 210000,
     currency: "XAF",
-    category: "Battery",
+    category: "Batteries",
   },
   {
     id: "kit-003",
@@ -173,7 +173,7 @@ const ProductsList = [
     imageUrl: "/imgs/me34.jpg",
     price: 350000,
     currency: "XAF",
-    category: "Solar Kit",
+    category: "Solar Kits",
   },
   {
     id: "kit-004",
@@ -181,7 +181,7 @@ const ProductsList = [
     imageUrl: "/imgs/me34.jpg",
     price: 560000,
     currency: "XAF",
-    category: "Solar Kit",
+    category: "Solar Kits",
   },
   {
     id: "acc-003",
@@ -229,7 +229,7 @@ const ProductsList = [
     imageUrl: "/imgs/me34.jpg",
     price: 15000,
     currency: "XAF",
-    category: "Solar Panel",
+    category: "Solar Panels",
   },
   {
     id: "sp-006",
@@ -237,7 +237,7 @@ const ProductsList = [
     imageUrl: "/imgs/me34.jpg",
     price: 120000,
     currency: "XAF",
-    category: "Solar Panel",
+    category: "Solar Panels",
   },
 ];
 
