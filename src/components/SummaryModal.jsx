@@ -5,14 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useShopping } from "@/context/ShoppingContext";
 
 const SummaryModal = () => {
-  const {
-    quantities,
-    cartItems,
-    totalQuantity,
-    totalPrice,
-    showSummary,
-    setShowSummary,
-  } = useShopping();
+  const { cartItems, totalQuantity, totalPrice, showSummary, setShowSummary } =
+    useShopping();
 
   return (
     <AnimatePresence>
@@ -55,11 +49,11 @@ const SummaryModal = () => {
                       <div>
                         <p className="font-medium">{product.title}</p>
                         <p className="text-sm text-gray-500">
-                          XAF {product.price} × {quantities[product.id]}
+                          XAF {product.price} × {product.quantity}
                         </p>
                       </div>
                       <p className="font-semibold">
-                        XAF {product.price * quantities[product.id]}
+                        XAF {product.price * product.quantity}
                       </p>
                     </li>
                   ))}

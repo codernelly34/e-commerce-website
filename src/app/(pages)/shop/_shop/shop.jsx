@@ -12,7 +12,6 @@ import { useShopping } from "@/context/ShoppingContext";
 const Shop = () => {
   const {
     cartItems,
-    quantities,
     addProduct,
     increaseQuantity,
     decreaseQuantity,
@@ -109,7 +108,7 @@ const Shop = () => {
                         className="text-lg font-medium cursor-default"
                         title="Product quantity"
                       >
-                        {quantities[product.id] || 0}
+                        {product.quantity || 0}
                       </span>
                       <button
                         onClick={() => increaseQuantity(product.id)}
