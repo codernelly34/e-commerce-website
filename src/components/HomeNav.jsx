@@ -33,7 +33,7 @@ const HomeNav = () => {
             height={500}
             alt="App icon"
             priority
-            className="h-10 w-10 md:h-14 md:w-14 p-0 transition-all duration-300 hover:scale-125"
+            className="h-12 w-12 p-0 transition-all duration-300 hover:scale-125"
           />
           <span className="flex ml-1.5 gap-2 text-white">
             <b>Electro</b> <b className="hidden md:block"> Tech</b>
@@ -44,8 +44,8 @@ const HomeNav = () => {
       <ul
         className={`flex items-center justify-between gap-10 mr-11 text-white font-semibold text-lg z-50 mobile ${
           isMenuOpen
-            ? "right-[-42px] opacity-100"
-            : "right-[1000px] opacity-0 md:opacity-100"
+            ? "-right-10.5 opacity-100"
+            : "right-250 opacity-0 md:opacity-100"
         } transition-all duration-300`}
       >
         {["account", "shop_now", "about_us", "contact_us"].map(
