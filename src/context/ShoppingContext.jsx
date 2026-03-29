@@ -8,63 +8,66 @@ const ShoppingContext = createContext();
 export const useShopping = () => useContext(ShoppingContext);
 
 export const ShoppingProvider = ({ children }) => {
-  const [productsToShop, setProductsToShop] = useState([]);
   const [quantities, setQuantities] = useState({});
   const [showSummary, setShowSummary] = useState(false);
 
-  const addProduct = (id) => {
-    const getProduct = ProductsList.find((product) => product.id === id);
-    setProductsToShop((prev) => {
-      if (prev.some((p) => p.id === getProduct.id)) return prev;
-      return [getProduct, ...prev];
-    });
+  const cartItems = useMemo(() => {
+    return ProductsList.filter((product) => quantities[product.id])
+      .map((product) => ({
+        ...product,
+        quantity: quantities[product.id],
+        total: product.price * quantities[product.id],
+      }))
+      .reverse();
+  }, [quantities]);
 
+  const addProduct = (id) => {
     setQuantities((prev) => {
       if (prev[id] !== undefined) return prev;
       return {
-        ...prev,
         [id]: 1,
+        ...prev,
       };
     });
   };
 
   const increaseQuantity = (productId) => {
     setQuantities((prev) => ({
-      ...prev,
       [productId]: (prev[productId] || 1) + 1,
+      ...prev,
     }));
   };
 
   const decreaseQuantity = (productId) => {
     setQuantities((prev) => ({
-      ...prev,
       [productId]: Math.max((prev[productId] || 1) - 1, 1),
+      ...prev,
     }));
   };
 
   const totalQuantity = useMemo(
     () =>
-      productsToShop.reduce(
+      cartItems.reduce(
         (total, product) => total + (quantities[product.id] || 0),
         0,
       ),
-    [productsToShop, quantities],
+    [cartItems, quantities],
   );
 
   const totalPrice = useMemo(
     () =>
-      productsToShop.reduce(
+      cartItems.reduce(
         (total, product) =>
           total + product.price * (quantities[product.id] || 0),
         0,
       ),
-    [productsToShop, quantities],
+    [cartItems, quantities],
   );
 
   return (
     <ShoppingContext.Provider
       value={{
-        productsToShop,
+        cartItems,
         quantities,
         addProduct,
         increaseQuantity,

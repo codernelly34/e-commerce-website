@@ -7,7 +7,7 @@ import { useShopping } from "@/context/ShoppingContext";
 const SummaryModal = () => {
   const {
     quantities,
-    productsToShop,
+    cartItems,
     totalQuantity,
     totalPrice,
     showSummary,
@@ -18,13 +18,13 @@ const SummaryModal = () => {
     <AnimatePresence>
       {showSummary && (
         <motion.div
-          className="fixed inset-0 z-[9999] bg-black/50 grid place-items-center"
+          className="fixed inset-0 z-9999 bg-black/50 grid place-items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
           <motion.div
-            className="bg-white w-[90%] max-w-lg rounded-lg shadow-lg p-6 relative overflow-auto max-h-[80vh]"
+            className="bg-white w-[90%] max-w-lg rounded-lg shadow-lg px-6 py-4 relative overflow-auto max-h-[90vh]"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
@@ -40,14 +40,14 @@ const SummaryModal = () => {
               Order Summary
             </h2>
 
-            {productsToShop.length === 0 ? (
+            {cartItems.length === 0 ? (
               <p className="text-center text-gray-500">
                 Your shopping list is empty.
               </p>
             ) : (
               <>
                 <ul className="space-y-4 overflow-y-auto max-h-[50vh] pr-2">
-                  {productsToShop.map((product) => (
+                  {cartItems.map((product) => (
                     <li
                       key={product.id}
                       className="flex justify-between items-center border-b pb-2"
@@ -80,7 +80,7 @@ const SummaryModal = () => {
                   <button
                     className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 rounded transition"
                     onClick={() => {
-                      showSummary(false);
+                      setShowSummary(false);
                       alert("Proceeding to payment...");
                     }}
                   >

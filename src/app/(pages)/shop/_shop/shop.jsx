@@ -11,7 +11,7 @@ import { useShopping } from "@/context/ShoppingContext";
 
 const Shop = () => {
   const {
-    productsToShop,
+    cartItems,
     quantities,
     addProduct,
     increaseQuantity,
@@ -44,7 +44,7 @@ const Shop = () => {
         id="shopping-list"
         className={`overflow-auto scrollbar-thin shadow-md h-[85vh] rounded bg-gray-100 relative w-full md:w-1/2`}
       >
-        {productsToShop.length > 0 ? (
+        {cartItems.length > 0 ? (
           <>
             <article
               className={`${roboto.className} shadow bg-white sticky z-auto top-0`}
@@ -59,7 +59,7 @@ const Shop = () => {
                   <p>Total prices:</p>
                 </span>
                 <span className="block">
-                  <p className="font-semibold">{productsToShop.length}</p>
+                  <p className="font-semibold">{cartItems.length}</p>
                   <p className="font-semibold">{totalQuantity}</p>
                   <p className="font-semibold">
                     XAF {totalPrice.toFixed(2)}
@@ -76,7 +76,7 @@ const Shop = () => {
                 </button>
               </span>
             </article>
-            {productsToShop.map((product) => (
+            {cartItems.map((product) => (
               <article
                 key={product.id}
                 className="shadow p-1 rounded bg-white mx-1 my-3"
