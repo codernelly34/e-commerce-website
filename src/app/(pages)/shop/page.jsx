@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import Shop from "./shop";
+import Shop from "./_shop/shop";
 
 export default function Page() {
   return (

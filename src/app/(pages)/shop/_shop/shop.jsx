@@ -138,7 +138,7 @@ const Shop = () => {
             ))}
             <Link
               href="#shopping-list"
-              className=" inline-block px-3 py-1 bg-gray-100 rounded mt-2 content-center text-center cursor-pointer"
+              className=" inline-block px-3 py-1 rounded mt-2 content-center text-center cursor-pointer bg-gray-300 hover:bg-gray-500 ease-linear duration-200"
             >
               Add more product to shopping list
             </Link>
@@ -148,7 +148,7 @@ const Shop = () => {
             <p>You have not Add any product to shopping list yet</p>
             <Link
               href="#quickShoppingProducts"
-              className=" inline-block px-3 py-1 bg-gray-100 rounded mt-2 content-center text-center cursor-pointer"
+              className=" inline-block px-3 py-1 rounded mt-2 content-center text-center cursor-pointer bg-gray-300 hover:bg-gray-500 ease-linear duration-200"
             >
               Add product to shopping list
             </Link>
@@ -187,7 +187,7 @@ const Shop = () => {
                 />
                 <button
                   onClick={() => addProduct(product.id)}
-                  className="px-2 py-1 bg-gray-100 rounded mt-2 content-center cursor-pointer whitespace-nowrap"
+                  className="px-2 py-1 bg-gray-300 hover:bg-gray-500 ease-linear duration-200 rounded mt-2 content-center cursor-pointer whitespace-nowrap"
                 >
                   Add to List{" "}
                   <Plus
