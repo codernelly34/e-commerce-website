@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, useMemo } from "react";
 import ProductsList from "@/utils/productsList.js";
+import { useNotify } from "./notifyContext.jsx";
 
 const ShoppingContext = createContext();
 
@@ -11,6 +12,8 @@ export const ShoppingProvider = ({ children }) => {
   const [quantities, setQuantities] = useState({});
   const [showSummary, setShowSummary] = useState(false);
   const [cartOrder, setCartOrder] = useState([]);
+
+  const { setNotifyText, setNotify } = useNotify();
 
   // const cartItems = useMemo(() => {
   //   return ProductsList.filter((product) => quantities[product.id]).map(
@@ -36,13 +39,17 @@ export const ShoppingProvider = ({ children }) => {
   }, [quantities, cartOrder]);
 
   const addProduct = (id) => {
+    let message = "";
     setQuantities((prev) => {
-      if (prev[id] !== undefined) return prev;
-      return {
-        ...prev,
-        [id]: 1,
-      };
+      if (prev[id] !== undefined) {
+        message = "Product already in list";
+        return prev;
+      }
+      message = "Product added";
+      return { ...prev, [id]: 1 };
     });
+    setNotify(true);
+    setNotifyText(message);
 
     setCartOrder((prev) => {
       if (prev.includes(id)) return prev;

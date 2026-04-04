@@ -1,5 +1,7 @@
 import BackToTop from "@/components/BackToTopButton.jsx";
+import { Notify } from "@/components/notify.jsx";
 import { ProductDetails } from "@/components/ProductDetails.jsx";
+import { NotifyProvider } from "@/context/notifyContext.jsx";
 import { ProductDetailsProvider } from "@/context/ProductDetailsContext.jsx";
 import { ShoppingProvider } from "@/context/ShoppingContext.jsx";
 import "@/styles/globals.css";
@@ -33,13 +35,16 @@ export default function RootLayout({ children }) {
         id="app"
         className={`${montserrat.className} antialiased text-base lg:text-lg`}
       >
-        <ShoppingProvider>
-          <ProductDetailsProvider>
-            {children}
-            <ProductDetails />
-            <BackToTop />
-          </ProductDetailsProvider>
-        </ShoppingProvider>
+        <NotifyProvider>
+          <ShoppingProvider>
+            <ProductDetailsProvider>
+              <Notify />
+              {children}
+              <ProductDetails />
+              <BackToTop />
+            </ProductDetailsProvider>
+          </ShoppingProvider>
+        </NotifyProvider>
       </body>
     </html>
   );
