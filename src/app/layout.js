@@ -6,6 +6,7 @@ import { ProductDetailsProvider } from "@/context/ProductDetailsContext.jsx";
 import { ShoppingProvider } from "@/context/ShoppingContext.jsx";
 import "@/styles/globals.css";
 import { Montserrat } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default function RootLayout({ children }) {
             </ProductDetailsProvider>
           </ShoppingProvider>
         </NotifyProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
