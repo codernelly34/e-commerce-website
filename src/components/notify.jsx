@@ -7,7 +7,7 @@ export const Notify = () => {
   const { notifyText, notify, setNotify } = useNotify();
 
   useEffect(() => {
-    if (!notify || !notifyText) return;
+    if (!notify) return;
     const timer = setTimeout(() => setNotify(false), 1500);
     return () => clearTimeout(timer);
   }, [notify]);
