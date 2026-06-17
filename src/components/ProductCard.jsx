@@ -20,7 +20,7 @@ const ProductCard = ({ title, imageUrl, currency, price, id, value }) => {
     if (id == null) return;
     if (value) router.push(`/shop?product=${id}`);
     addProduct(id);
-  }, [router, id]);
+  }, [router, id, addProduct, value]);
 
   return (
     <div

@@ -28,7 +28,7 @@ const Shop = () => {
     if (!productParam) return;
 
     addProduct(productParam);
-  }, [productParam]);
+  }, [productParam, addProduct]);
 
   const toggleItem = (id) => {
     setOpenItems((prev) => ({
