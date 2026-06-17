@@ -14,9 +14,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Solar/Electrical Online Store",
+  title: "237 Electro Tech",
   description:
-    "Electro Tech is your all-in-one partner for solar and electrical installation, reliable maintenance, and quality equipment supply. We bring energy solutions that are efficient, affordable, and built to last.",
+    "237 Electro Tech is your all-in-one partner for solar and electrical installation, reliable maintenance, and quality equipment supply. We bring energy solutions that are efficient, affordable, and built to last.",
   icons: {
     icon: "https://237electrotech.vercel.app/favicon.png",
   },

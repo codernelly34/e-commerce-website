@@ -36,7 +36,7 @@ const HomeNav = () => {
             className="h-12 w-12 p-0 transition-all duration-300 hover:scale-125"
           />
           <span className="flex ml-1.5 gap-2 text-white">
-            <b>Electro</b> <b className="hidden md:block"> Tech</b>
+            <b>237 Electro</b> <b className="hidden md:block"> Tech</b>
           </span>
         </Link>
       </div>

@@ -136,7 +136,7 @@ const Shop = () => {
               </article>
             ))}
             <Link
-              href="#shopping-list"
+              href="#quickShoppingProducts"
               className=" inline-block px-3 py-1 rounded mt-2 content-center text-center cursor-pointer bg-gray-300 hover:bg-gray-500 ease-linear duration-200"
             >
               Add more product to shopping list

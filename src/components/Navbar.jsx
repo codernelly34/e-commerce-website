@@ -21,10 +21,10 @@ const Navbar = () => {
               width={800}
               height={500}
               alt="App icon"
-              className="h-12 w-12 p-0 transition-all duration-300 hover:scale-125"
+              className="h-12 w-12 p-0 transition-all duration-300 hover:scale-110"
             />
             <h1 className="hidden md:block text-xl font-semibold">
-              Electro Tech
+              237 Electro Tech
             </h1>
           </Link>
         </div>
@@ -44,8 +44,10 @@ const Navbar = () => {
             >
               <ShoppingCart size={24} />
               <span className="text-sm">
-                {totalQuantity} item{totalQuantity === 1 ? "" : "s"} | XAF{" "}
-                {totalPrice} frs
+                {totalQuantity} item{totalQuantity === 1 ? "" : "s"}{" "}
+                <span className="hidden md:inline-block">
+                  | XAF {totalPrice} frs
+                </span>
               </span>
             </Link>
           </div>
