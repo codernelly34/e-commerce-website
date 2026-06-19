@@ -1,0 +1,99 @@
+.footer {
+  background: #0a0a0a;
+  color: white;
+  padding-top: 40px;
+  margin-top: 60px;
+}
+
+/* layout */
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  padding: 0 50px;
+}
+
+/* headings */
+.box h3 {
+  color: #ffb703;
+  margin-bottom: 10px;
+}
+
+.box h2 {
+  color: #ffb703;
+}
+
+.box p {
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* small text */
+.small {
+  font-size: 13px;
+  color: #888;
+}
+
+/* lists */
+.box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.box ul li {
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.box ul li:hover {
+  color: #ffb703;
+}
+
+/* WhatsApp button */
+.whatsapp {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #25d366;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.quote {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #ffb703;
+  color: black;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* bottom */
+.bottom {
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  border-top: 1px solid #222;
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
