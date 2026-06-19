@@ -1,10 +1,11 @@
+import "@/styles/globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import BackToTop from "@/components/BackToTopButton.jsx";
 import { Notify } from "@/components/notify.jsx";
 import { ProductDetails } from "@/components/ProductDetails.jsx";
 import { NotifyProvider } from "@/context/notifyContext.jsx";
 import { ProductDetailsProvider } from "@/context/ProductDetailsContext.jsx";
 import { ShoppingProvider } from "@/context/ShoppingContext.jsx";
-import "@/styles/globals.css";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
@@ -45,6 +46,7 @@ export default function RootLayout({ children }) {
             </ProductDetailsProvider>
           </ShoppingProvider>
         </NotifyProvider>
+        <Analytics />
       </body>
     </html>
   );
