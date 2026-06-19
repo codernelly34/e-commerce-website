@@ -1,2 +1,8 @@
 @import "tailwindcss";
 @plugin 'tailwind-scrollbar';
+
+.A {
+  color: rgb(66, 66, 207);
+  text-decoration: underline;
+  cursor: pointer;
+}
