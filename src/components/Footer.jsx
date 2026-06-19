@@ -11,10 +11,14 @@ export default function Footer() {
           <h2 className={styles.logo}>
             <Link href="/">237 Electro Tech</Link>
           </h2>
-          <p className={styles.text}>
-            Electrical & Solar Installation Services in Cameroon 🇨🇲 Reliable
-            power solutions for homes and businesses.
-          </p>
+          <ul>
+            <li>
+              <MapPin size={20} className="inline" /> Buea, Cameroon
+            </li>
+            <li>
+              <Clock size={20} className="inline" /> Mon - Sat (8am - 6pm)
+            </li>
+          </ul>
         </div>
 
         {/* Services */}
@@ -43,19 +47,13 @@ export default function Footer() {
                 <Mail size={20} className="inline" /> 237electrotech@gmail.com
               </Link>
             </li>
-            <li>
-              <MapPin size={20} className="inline" /> Buea, Cameroon
-            </li>
-            <li>
-              <Clock size={20} className="inline" /> Mon - Sat (8am - 6pm)
-              <Link
-                className={styles.whatsapp}
-                href="https://wa.me/237679510125"
-                target="_blank"
-              >
-                Chat on WhatsApp <MessageCircleMore className="inline" />
-              </Link>
-            </li>
+            <Link
+              className={styles.whatsapp}
+              href="https://wa.me/237679510125"
+              target="_blank"
+            >
+              Chat on WhatsApp <MessageCircleMore className="inline" />
+            </Link>
           </ul>
         </div>
 
