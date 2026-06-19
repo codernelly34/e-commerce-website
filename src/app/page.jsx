@@ -4,6 +4,7 @@ import Categories from "@/components/Categories.jsx";
 import Products from "@/components/Products.jsx";
 import Text from "./_home/text.jsx";
 import Location from "./_home/location.jsx";
+import Testimonial from "./_home/testimonial.jsx";
 
 const Home = () => {
   return (
@@ -12,7 +13,7 @@ const Home = () => {
         <HomeNav />
         <Text />
       </header>
-      <main id="mainSection" className="mb-20">
+      <main id="mainSection" className="my-4">
         <section id="quickShow" className="relative @container">
           <Categories />
           <div className="text-center py-10">
@@ -20,8 +21,9 @@ const Home = () => {
           </div>
           <Products />
         </section>
+        <Location />
+        <Testimonial />
       </main>
-      <Location />
     </div>
   );
 };
