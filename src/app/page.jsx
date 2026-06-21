@@ -6,6 +6,7 @@ import Text from "./_home/text.jsx";
 import Location from "./_home/location.jsx";
 import Testimonial from "./_home/testimonial.jsx";
 import Footer from "@/components/Footer.jsx";
+import ServiceArea from "./_home/serviceArea.jsx";
 
 const Home = () => {
   return (
@@ -14,14 +15,15 @@ const Home = () => {
         <HomeNav />
         <Text />
       </header>
-      <main id="mainSection" className="my-4">
-        <section id="quickShow" className="relative @container">
+      <main id="mainSection">
+        <section id="quickShop" className="relative @container my-8">
           <Categories />
           <div className="text-center py-10">
-            <span className="text-3xl font-medium">Top best products</span>
+            <span className="text-2xl font-bold">Top best products</span>
           </div>
           <Products />
         </section>
+        <ServiceArea />
         <Location />
         <Testimonial />
       </main>
