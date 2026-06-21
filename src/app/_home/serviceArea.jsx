@@ -52,6 +52,11 @@ const ServiceArea = () => {
               {service.name}
             </h2>
             <p>{service.description}</p>
+            <div className="text-center mt-4 mb-2">
+              <button className="font-semibold border-b-2 p-0 m-0 cursor-pointer">
+                MORE
+              </button>
+            </div>
           </div>
         ))}
       </div>
